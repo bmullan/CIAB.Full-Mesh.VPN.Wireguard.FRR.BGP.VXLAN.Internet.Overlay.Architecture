@@ -12,3 +12,6 @@ tools and applications:
 - VXLAN   
 - and LXD VMs and Containers  
   
+For complete step-by-step installation/configuration instructions see:
+
+The CIAB Mesh VPN Internet Overlay Installation Guide
