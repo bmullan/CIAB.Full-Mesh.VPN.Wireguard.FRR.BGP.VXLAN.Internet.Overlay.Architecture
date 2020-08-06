@@ -10,7 +10,7 @@ The ***Cloud In A Box (CIAB)*** project introduces what we describe as the
 ***Virtual Private Network (VPN)** means your entire Internet Overlay is fully encrypted end-to-end.*  
 ***Overlay** Network overlays are a method of using software virtualization to create additional layers 
 of network abstraction (or software-based network overlays) that can be run on top of the physical network, 
-often providing new applications or enhanced security benefits.*
+often providing new applications or enhanced security benefits.*  
 ***VXLAN** [here is a diagram of the VXLAN Model](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/issues/1)*
 
 ---
