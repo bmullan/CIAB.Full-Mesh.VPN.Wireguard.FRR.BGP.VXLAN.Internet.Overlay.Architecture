@@ -40,6 +40,8 @@ Open Source tools and applications:
 - **[Virtual eXtended LAN - VXLAN](https://user-images.githubusercontent.com/1682855/89578990-02194980-d801-11ea-8f39-62c74b625732.png)**   
 - **[LXD VMs and Containers](https://linuxcontainers.org/lxd/docs/master/)**  
   
+---  
+  
 For the **Complete Step-by-Step Installation/Configuration Instruction Guide** see:
 
 - **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
@@ -54,6 +56,8 @@ running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cl
 All **data traffic is highly encrypted end-to-end** by Wireguard's VPN.
 
 VxLAN supports Layer2/3 with *Layer 3 preventing flooding your Overlay Network* with **Broadcast, Unknown and Multicast (BUM) traffic**.
+
+---  
 
 On Youtube are two Video's to help you understand and to install & configure the CIAB Full-Mesh VPN Internet Overlay Architecture using
 our Installation Guide see:
@@ -82,8 +86,10 @@ The 10.x.x.x network range is **not** Routeable over the Internet thus proving t
 
 All Servers and LXD VM and LXD containers are running Ubuntu 20.04 LTS.
 
-**NOTE:**  There is no practical limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN except the Underlay Physical
-network that the Overlay is built upon.   
+---
+
+**NOTE:**  There is no practical limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN except the *Underlay* **Physical
+network** that the *Overlay* is built upon.   
 
 Given that a single Node/Server can support possibly hundreds of LXD containers and using this Overlay the Containers on any 1 Server
 can interact/access Containers on any other Server anywhere in the Mesh directly and securely... well things can become interesting.
