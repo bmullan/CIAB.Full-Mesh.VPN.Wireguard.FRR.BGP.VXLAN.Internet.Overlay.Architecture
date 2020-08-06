@@ -23,9 +23,12 @@ The ideal solution to satisfy the goals of this project will include the followi
 > 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet  
 > 6. Multi-Cloud and Hybrid Cloud capable**  
 
-Everything is implemented using Open Source tools and applications:   
+---
+
+The CIAB Full Mesh VPN Inteernet Overlay Architecture is completly implemented using  
+Open Source tools and applications:   
  
-- **Linux (I use Ubuntu)**
+- **Linux (*I use Ubuntu*)**
 - **[Wireguard VPN](https://www.wireguard.com/)**
 - **[VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)**
 - **[Free Range Routing - FRR](https://frrouting.org/)**
