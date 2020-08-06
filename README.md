@@ -16,15 +16,15 @@ The ideal solution to satisfy the goals of this project will include the followi
 6. Multi-Cloud and Hybrid Cloud capable*
 
 Everything is implemented using Open Source tools and applications:   
-*  
-- Linux (I use Ubuntu)
-- Wireguard
-- VxWireguard-Generator
-- Free Range Routing (FRR)  
-- BGP and BGP-VRFs  
-- VXLAN   
-- and LXD VMs and Containers  
-*  
+ 
+- **Linux (I use Ubuntu)**
+- **[Wireguard VPN](https://www.wireguard.com/)**
+- **[VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)**
+- **[Free Range Routing - FRR](https://frrouting.org/)**
+- **FRR's BGP and BGP-VRF protocols*  
+- **Virtual eXtended LAN (VXLAN)**   
+- and *LXD VMs and Containers*  
+  
 For complete step-by-step installation/configuration instructions see:
 
 **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
