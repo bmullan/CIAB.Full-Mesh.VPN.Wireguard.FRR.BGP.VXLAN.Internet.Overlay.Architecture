@@ -3,6 +3,7 @@
 The ***Cloud In A Box (CIAB)*** project introduces what we describe as the 
 ***CIAB Full Mesh VPN Internet Overlay Architecture***.
 
+---  
 ### Definitions  
 
 ***Full Mesh** means any node can reach any other node directly without going through some central node.*  
@@ -11,7 +12,9 @@ The ***Cloud In A Box (CIAB)*** project introduces what we describe as the
 of network abstraction (or software-based network overlays) that can be run on top of the physical network, 
 often providing new applications or enhanced security benefits.*
 
-## Goals of the CIAB Mesh VPN Internetworking Overlay Project
+---
+
+## Goals of the CIAB Mesh VPN Internet Overlay Project
 
 The ideal solution to satisfy the goals of this project will include the following
 ***Key Performance Indicator (KPI)*** success factors:
@@ -47,5 +50,36 @@ running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cl
 
 All **data traffic is highly encrypted end-to-end** by Wireguard's VPN.
 
-VxLAN supports Layer2/3 with Layer 3 preventing flooding your Overlay Network with **Broadcast, Unknown and Multicast (BUM) traffic**.
+VxLAN supports Layer2/3 with *Layer 3 preventing flooding your Overlay Network* with **Broadcast, Unknown and Multicast (BUM) traffic**.
+
+On Youtube are two Video's to help you understand and to install & configure the CIAB Full-Mesh VPN Internet Overlay Architecture using
+our Installation Guide see:
+
+**Video #1**  
+
+**[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long  
+
+**Video #2**  
+
+**[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)**  - approx 1 hr long  
+
+*Video #2 will implement a 3 Node Full-Mesh VPN Internet Overlay using 3 Servers*:
+
+> **1 - a Digital Ocean Cloud server located in the U.S.**  
+> **1 - a Hetzner Cloud server located in Germany**  
+> **1 - an LXD VM on one of my local servers**  *traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up.*
+
+At the end of Video #2 you will see Ping tests showing connectivity to/from ANY Node to/from ANY other Node's LXD Containers which are
+on private 10.x.x.x networks.  
+
+The 10.x.x.x network range is **not** Routeable over the Internet thus proving the success of the 
+***CIAB Full-Mesh VPN Internet Overlay*** in providing that universal inter-connectivity.
+
+All Servers and LXD VM and LXD containers are running Ubuntu 20.04 LTS.
+
+**NOTE:**  There is no practically no limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN.   
+
+
+
+
 
