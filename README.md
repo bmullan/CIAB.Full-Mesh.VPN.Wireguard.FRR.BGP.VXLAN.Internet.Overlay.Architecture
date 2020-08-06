@@ -81,9 +81,11 @@ The 10.x.x.x network range is **not** Routeable over the Internet thus proving t
 
 All Servers and LXD VM and LXD containers are running Ubuntu 20.04 LTS.
 
-**NOTE:**  There is no practically no limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN.   
+**NOTE:**  There is no practical limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN except the Underlay Physical
+network that the Overlay is built upon.   
 
-
+Given that a single Node/Server can support possibly hundreds of LXD containers and using this Overlay the Containers on any 1 Server
+can interact/access Containers on any other Server anywhere in the Mesh directly and securely... well things can become interesting.
 
 
 
