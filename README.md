@@ -41,9 +41,9 @@ Open Source tools and applications:
   
 For complete step-by-step installation/configuration instructions see:
 
-**[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
+- **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
 
-**[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/ciabvpn-utility-scripts.tar.gz)**
+- **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/ciabvpn-utility-scripts.tar.gz)**
 
 *Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM's and LXD Containers
 running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cloud Datacenters.*
@@ -57,20 +57,20 @@ our Installation Guide see:
 
 **Video #1**  
 
-**[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long  
+- **[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long  
 
 **Video #2**  
 
-**[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)**  - approx 1 hr long  
+- **[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)**  - approx 1 hr long  
 
 *Video #2 will implement a 3 Node Full-Mesh VPN Internet Overlay using 3 Servers*:
 
-> **1 - a Digital Ocean Cloud server located in the U.S.**  
-> **1 - a Hetzner Cloud server located in Germany**  
-> **1 - an LXD VM on one of my local servers**  *traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up.*
+- **1 - a Digital Ocean Cloud server located in the U.S.**  
+- **1 - a Hetzner Cloud server located in Germany**  
+- **1 - an LXD VM on one of my local servers**  *traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up.*
 
 At the end of Video #2 you will see Ping tests showing connectivity to/from ANY Node to/from ANY other Node's LXD Containers which are
-on private 10.x.x.x networks.  
+on ***private*** 10.x.x.x networks within each Node.  
 
 The 10.x.x.x network range is **not** Routeable over the Internet thus proving the success of the 
 ***CIAB Full-Mesh VPN Internet Overlay*** in providing that universal inter-connectivity.
