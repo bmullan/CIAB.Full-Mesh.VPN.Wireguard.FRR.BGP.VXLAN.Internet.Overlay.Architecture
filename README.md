@@ -7,13 +7,13 @@ The ***Cloud In A Box (CIAB)*** project introduces what we describes as the
 
 The ideal solution to satisfy the goals of this project will include the following
 ***Key Performance Indicator (KPI)*** success factors:
-
-*1. Security and Secure communications
-2. Open Source
-3. Supports use of LXD Containers & VMs and LXD related technologies
-4. Easy/simple installation, configuration and expansion
-5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet
-6. Multi-Cloud and Hybrid Cloud capable*
+  
+*1. Security and Secure communications  
+2. Open Source  
+3. Supports use of LXD Containers & VMs and LXD related technologies  
+4. Easy/simple installation, configuration and expansion  
+5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet  
+6. Multi-Cloud and Hybrid Cloud capable*  
 
 Everything is implemented using Open Source tools and applications:   
  
@@ -22,7 +22,7 @@ Everything is implemented using Open Source tools and applications:
 - **[VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)**
 - **[Free Range Routing - FRR](https://frrouting.org/)**
 - **FRR's BGP and BGP-VRF protocols*  
-- **Virtual eXtended LAN (VXLAN)**   
+- **[Virtual eXtended LAN - VXLAN](https://user-images.githubusercontent.com/1682855/89578990-02194980-d801-11ea-8f39-62c74b625732.png)**   
 - and *LXD VMs and Containers*  
   
 For complete step-by-step installation/configuration instructions see:
