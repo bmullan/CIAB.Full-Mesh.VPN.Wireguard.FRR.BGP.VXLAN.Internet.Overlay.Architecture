@@ -1,19 +1,19 @@
-# CIAB Mesh VPN Internet Overlay
+# CIAB Full Mesh VPN Internet Overlay
 
-The ***Cloud In A Box (CIAB)*** project introduces what we describes as the 
-*CIAB Mesh VPN Internet Overlay Architecture*.
+The ***Cloud In A Box (CIAB)*** project introduces what we describe as the 
+***CIAB Full Mesh VPN Internet Overlay Architecture***.
 
 ## Goals of the CIAB Mesh VPN Internetworking Overlay Project
 
 The ideal solution to satisfy the goals of this project will include the following
 ***Key Performance Indicator (KPI)*** success factors:
   
-> *1. Security and Secure communications  
+> **1. Security and Secure communications  
 > 2. Open Source  
 > 3. Supports use of LXD Containers & VMs and LXD related technologies  
 > 4. Easy/simple installation, configuration and expansion  
 > 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet  
-> 6. Multi-Cloud and Hybrid Cloud capable*  
+> 6. Multi-Cloud and Hybrid Cloud capable**  
 
 Everything is implemented using Open Source tools and applications:   
  
