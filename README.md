@@ -39,9 +39,11 @@ Open Source tools and applications:
 - **[Virtual eXtended LAN - VXLAN](https://user-images.githubusercontent.com/1682855/89578990-02194980-d801-11ea-8f39-62c74b625732.png)**   
 - **[LXD VMs and Containers](https://linuxcontainers.org/lxd/docs/master/)**  
   
-For complete step-by-step installation/configuration instructions see:
+For the **Complete Step-by-Step Installation/Configuration Instruction Guide** see:
 
 - **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
+
+To Download the **CIAB Mesh VPN Utility Scripts** see:
 
 - **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/ciabvpn-utility-scripts.tar.gz)**
 
@@ -60,6 +62,8 @@ our Installation Guide see:
 - **[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long  
 
 **Video #2**  
+
+> ***Note:** you can download the Installation Guide PDF (see above) if you want to follow it while watching Video #2*
 
 - **[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)**  - approx 1 hr long  
 
