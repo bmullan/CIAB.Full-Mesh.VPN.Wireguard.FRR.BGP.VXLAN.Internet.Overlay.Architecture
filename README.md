@@ -3,6 +3,14 @@
 The ***Cloud In A Box (CIAB)*** project introduces what we describe as the 
 ***CIAB Full Mesh VPN Internet Overlay Architecture***.
 
+### Definitions  
+
+***Full Mesh** means any node can reach any other node directly without going through some central node.*  
+***Virtual Private Network (VPN)** means your entire Internet Overlay is fully encrypted end-to-end.*  
+***Overlay** Network overlays are a method of using software virtualization to create additional layers 
+of network abstraction (or software-based network overlays) that can be run on top of the physical network, 
+often providing new applications or enhanced security benefits.*
+
 ## Goals of the CIAB Mesh VPN Internetworking Overlay Project
 
 The ideal solution to satisfy the goals of this project will include the following
