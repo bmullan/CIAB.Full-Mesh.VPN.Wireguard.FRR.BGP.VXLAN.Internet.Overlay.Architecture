@@ -47,7 +47,7 @@ Open Source tools and applications:
   
 For the **Complete Step-by-Step Installation/Configuration Instruction Guide** see:
 
-- **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
+- **[The CIAB Mesh VPN Internet Overlay Installation Guide](docs/runsheet.md)**
 
 To Download the **CIAB Mesh VPN Utility Scripts** see:
 
@@ -96,4 +96,3 @@ network** that the *Overlay* is built upon.
 
 Given that a single Node/Server can support possibly hundreds of LXD containers and using this Overlay the Containers on any 1 Server
 can interact/access Containers on any other Server anywhere in the Mesh directly and securely... well things can become interesting.
-
