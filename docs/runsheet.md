@@ -270,16 +270,24 @@ Given the previous Note, you should pick and use an Ephemeral Port Number betwee
 For this document and our examples, I’ll use Port 50000.
 
 ### Step 8
+
+Set public ip of `node1`, `node2` and `node3`, to each Node’s Public Interface IP address (note: either
 IPv4 or IPv6 will work).
-Example: suppose Node1 is a Cloud Instance and it’s Internet facing \<public ip\> address is
-132.65.71.21 then the command for Node1 would be:
-\$ vwgen set ciabmesh node node1 endpoint '132.65.71.21:50000' listen-port 50000
-Now, execute the following for each of your Nodes substituting each Node’s Public Interface IP
-address:
-\$ vwgen set ciabmesh node node1 endpoint '\<public ip node1\>:50000' listen-port 50000
-\$ vwgen set ciabmesh node node2 endpoint '\<public ip node2\>:50000' listen-port 50000
-\$ vwgen set ciabmesh node node3 endpoint '\<public ip node3\>:50000' listen-port 50000
-Step 9
+
+**Example:**
+
+Suppose Node1 is a Cloud Instance and it’s Internet facing `<public ip>` address is
+`132.65.71.21` then the command for Node1 would be:
+
+    $ vwgen set ciabmesh node node1 endpoint '132.65.71.21:50000' listen-port 50000
+
+Now, execute the following for each of your Nodes substituting each Node’s Public Interface IP address:
+
+    $ vwgen set ciabmesh node node1 endpoint '\<public ip node1\>:50000' listen-port 50000
+    $ vwgen set ciabmesh node node2 endpoint '\<public ip node2\>:50000' listen-port 50000
+    $ vwgen set ciabmesh node node3 endpoint '\<public ip node3\>:50000' listen-port 50000
+
+### Step 9
 Show all information we have so far for cursory verification.
 IMPORTANT NOTE: The following will also show you each Node’s VTEP IP !
 \$ vwgen show ciabmesh | more
