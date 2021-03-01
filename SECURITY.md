@@ -1,6 +1,6 @@
 # Security Issue Policy
 
-If you uncover a security issue with CIAB, please write to <bmullan@gmail.com>. 
+If you uncover a security issue with CIAB, please write to <bmullan@gmail.com>.
 Please encrypt sensitive information using the [PGP key](PGP-KEY.asc).
 
 Once the CIAB maintainer becomes aware (or are made

@@ -1,35 +1,62 @@
 # Cloud In A Box: Full Mesh VPN Internet Overlay
 
-The ***Cloud In A Box (CIAB)*** project introduces what we describe as the
-***CIAB Full Mesh VPN Internet Overlay Architecture***.
+The **_Cloud In A Box (CIAB)_** project introduces what we describe as the
+**_CIAB Full Mesh VPN Internet Overlay Architecture_**.
 
-***Note:*** There are 2 Youtube Video's referenced further down.  The first is a 8-10 min Intro and the second actually covers the Installation Guide
-step-by-step as I configure all of this on Two different Clouds  and a local VM.   There are only about 14 steps.
+**_Note:_** There are 2 Youtube Video's referenced further down. The first is a 8-10 min Intro and the second actually covers the Installation Guide
+step-by-step as I configure all of this on Two different Clouds and a local VM. There are only about 14 steps.
 
 ---
 
+## Table of Contents
+
+- [Definitions](#definitions)
+- [Goals of the CIAB Mesh VPN Internet Overlay Project](#goals-of-the-ciab-mesh-vpn-internet-overlay-project)
+- [Getting Started](#getting-started)
+  - [Architecture](#architecture)
+    - [BGP Route Reflectors](#bgp-route-reflectors)
+    - [VxWireGuard Background](#vxwireguard-background)
+  - [Goals of the CIAB Mesh VPN Internetworking Overlay Project](#goals-of-the-ciab-mesh-vpn-internetworking-overlay-project)
+  - [Installation Guide](#installation-guide)
+    - [Assumptions](#assumptions)
+    - [Step 1](#step-1)
+    - [Step 2](#step-2)
+    - [Step 3](#step-3)
+    - [Step 4](#step-4)
+      - [Scripts and their purpose](#scripts-and-their-purpose)
+    - [Step 5](#step-5)
+    - [Step 6](#step-6)
+    - [Step 7](#step-7)
+      - [Background Note](#background-note)
+    - [Step 8](#step-8)
+    - [Step 9](#step-9)
+    - [Step 10](#step-10)
+    - [Step 11](#step-11)
+    - [Step 12](#step-12)
+    - [Step 13](#step-13)
+    - [Step 14](#step-14)
+    - [Step 15](#step-15)
+  - [Conclusion](#conclusion)
+  - [Appendix 1](#appendix-1)
+  - [Appendix 2](#appendix-2)
+
 ## Definitions
 
-***Full Mesh** means any node can reach any other node directly without going through some central node.*
-***Virtual Private Network (VPN)** means your entire Internet Overlay is fully encrypted end-to-end.*
-***Overlay** Network overlays are a method of using software virtualization to create additional layers
+**\*Full Mesh** means any node can reach any other node directly without going through some central node.\*
+**\*Virtual Private Network (VPN)** means your entire Internet Overlay is fully encrypted end-to-end.\*
+**\*Overlay** Network overlays are a method of using software virtualization to create additional layers
 of network abstraction (or software-based network overlays) that can be run on top of the physical network,
-often providing new applications or enhanced security benefits.*
-***VXLAN** [here is a diagram of the VXLAN Model](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/issues/1)*
+often providing new applications or enhanced security benefits.\*
+**\*VXLAN** [here is a diagram of the VXLAN Model](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/issues/1)\*
 
 ---
 
 ## Goals of the CIAB Mesh VPN Internet Overlay Project
 
 The ideal solution to satisfy the goals of this project will include the following
-***Key Performance Indicator (KPI)*** success factors:
+**_Key Performance Indicator (KPI)_** success factors:
 
-> **1. Security and Secure communications
-> 2. Open Source
-> 3. Supports use of LXD Containers & VMs and LXD related technologies
-> 4. Easy/simple installation, configuration and expansion
-> 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet
-> 6. Multi-Cloud and Hybrid Cloud capable**
+> **1. Security and Secure communications 2. Open Source 3. Supports use of LXD Containers & VMs and LXD related technologies 4. Easy/simple installation, configuration and expansion 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet 6. Multi-Cloud and Hybrid Cloud capable**
 
 ---
 
@@ -54,46 +81,46 @@ To Download the **CIAB Mesh VPN Utility Scripts** see:
 
 - **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bbros-dev/ciab/blob/issue-4/scripts/)**
 
-*Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM's and LXD Containers
-running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cloud Datacenters.*
+_Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM's and LXD Containers
+running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cloud Datacenters._
 
 All **data traffic is highly encrypted end-to-end** by Wireguard's VPN.
 
-VxLAN supports Layer2/3 with *Layer 3 preventing flooding your Overlay Network* with **Broadcast, Unknown and Multicast (BUM) traffic**.
+VxLAN supports Layer2/3 with _Layer 3 preventing flooding your Overlay Network_ with **Broadcast, Unknown and Multicast (BUM) traffic**.
 
 ---
 
 On Youtube are two Video's to help you understand and to install & configure the CIAB Full-Mesh VPN Internet Overlay Architecture using
 our Installation Guide see:
 
-**Video #1**
+### Video #1
 
 - **[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long
 
-**Video #2**
+### Video #2
 
-> ***Note:** you can download the Installation Guide PDF (see above) if you want to follow it while watching Video #2*
+> **\*Note:** you can download the Installation Guide PDF (see above) if you want to follow it while watching Video #2\*
 
-- **[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)**  - approx 1 hr long
+- **[CIAB Full-Mesh VPN Internet Overlay Installation Guide - Step-by-Step](https://www.youtube.com/watch?v=HVJlIE2TUpc)** - approx 1 hr long
 
-*Video #2 will implement a 3 Node Full-Mesh VPN Internet Overlay using 3 Servers*:
+_Video #2 will implement a 3 Node Full-Mesh VPN Internet Overlay using 3 Servers_:
 
 - **1 - a Digital Ocean Cloud server located in the U.S.**
 - **1 - a Hetzner Cloud server located in Germany**
-- **1 - an LXD VM on one of my local servers**  *traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up.*
+- **1 - an LXD VM on one of my local servers** _traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up._
 
 At the end of Video #2 you will see Ping tests showing connectivity to/from ANY Node to/from ANY other Node's LXD Containers which are
-on ***private*** `10.x.x.x` networks within each Node.
+on **_private_** `10.x.x.x` networks within each Node.
 
 The `10.x.x.x` network range is **not** Routeable over the Internet thus proving the success of the
-***CIAB Full-Mesh VPN Internet Overlay*** in providing that universal inter-connectivity.
+**_CIAB Full-Mesh VPN Internet Overlay_** in providing that universal inter-connectivity.
 
 All Servers and LXD VM and LXD containers are running Ubuntu 20.04 LTS.
 
 ---
 
-**NOTE:**  There is no practical limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN except the *Underlay* **Physical
-network** that the *Overlay* is built upon.
+**NOTE:** There is no practical limit to the number of Nodes/Servers/VMs you can add to the Mesh-VPN except the _Underlay_ **Physical
+network** that the _Overlay_ is built upon.
 
 Given that a single Node/Server can support possibly hundreds of LXD containers and using this Overlay the Containers on any 1 Server
 can interact/access Containers on any other Server anywhere in the Mesh directly and securely... well things can become interesting.
@@ -249,31 +276,31 @@ each individual Node’s Wireguard/VxLAN ciabmesh.conf config file.
 Log into the Node using ssh or however you do it.
 Make sure UNZIP is installed:
 
-    $ sudo apt install unzip -y
+    sudo apt install unzip -y
 
 Use “wget” to retrieve the VxWireguard-Generator .ZIP file from github (install wget if its not
 already).
 
-    $ wget https://github.com/m13253/VxWireguard-Generator/archive/master.zip
+    wget https://github.com/m13253/VxWireguard-Generator/archive/master.zip
 
 Unzip the VxWireguard-Generator
 
-    $ unzip ./master.zip
+    unzip ./master.zip
 
 Change into the unzipped Directory that was created:
 
-    $ cd ./VxWireguard-Generator-master
+    cd ./VxWireguard-Generator-master
 
 Install pre-requisites for VxWireguard-Generator.
 Install python3-pip:
 
-    $ sudo apt install python3-pip -y
+    sudo apt install python3-pip -y
 
 Install VxWirguard-Generator misc files
 
-    $ sudo pip3 install -r requirements.txt
-    $ python3 setup.py build
-    $ sudo python3 setup.py install --force
+    sudo pip3 install -r requirements.txt
+    python3 setup.py build
+    sudo python3 setup.py install --force
 
 #### Step 6
 
@@ -281,11 +308,11 @@ Create a Master config file for our CIAB Mesh VPN using [VxWireguard-Generator](
 
 First, create a work directory (let’s call it “ciabvpn”):
 
-    $ mkdir ciabvpn
+    mkdir ciabvpn
 
 change into that work directory
 
-    $ cd ./ciabvpn
+    cd ./ciabvpn
 
 NOTE: VxWireguard-Generator’s main cli tool is `vwgen`.
 To view a `vwgen` help page:
@@ -311,7 +338,7 @@ You may pass `--help` to any of these sub-commands to view usage.
 
 Start to build the Master VxWireguard-Configuration file (we’ll call ours ciabmesh):
 
-    $ vwgen add ciabmesh
+    vwgen add ciabmesh
 
 This will create a file a Master config file called `ciabmesh.conf`
 Set the IPv4 and IPv6 Address Pool for our CIAB Mesh Internet Overlay.
@@ -319,7 +346,7 @@ Set the IPv4 and IPv6 Address Pool for our CIAB Mesh Internet Overlay.
 The following will cause VxWireguard-Generator to utilize IP addresses from these IPv4 and IPv6
 address Pools for the configuration of your CIAB Mesh Internetwork.
 
-    $ vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
+    vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
 
 #### Step 7
 
@@ -331,7 +358,7 @@ Then execute the next step.
 
 Say you only want to create configs for our demo’s 3 nodes
 
-    $ vwgen add ciabmesh node1 node2 node3
+    vwgen add ciabmesh node1 node2 node3
 
 The above command will inject modifications into our Master `ciabmesh.conf` file with separate
 Sections for each Node (ie `node1`, `node2` etc).
@@ -343,7 +370,7 @@ sequential Node number here is an example of how to do that:
 Say you want to create a Master config file that has 50 Node configs. The name `root` is to be
 `mycn` and we want 50 of them:
 
-    $ vwgen add ciabmesh \$(seq -f 'mycn%.f' 50)
+    vwgen add ciabmesh \$(seq -f 'mycn%.f' 50)
 
 This would create a Master config file with 50 Node Configs each named:
 `mycn01`, `mycn02`, ... `mycn49`, `mycn50`. Each with its VxLAN TEP IP, the Node’s
@@ -379,13 +406,13 @@ IPv4 or IPv6 will work).
 Suppose Node1 is a Cloud Instance and it’s Internet facing `<public ip>` address is
 `132.65.71.21` then the command for Node1 would be:
 
-    $ vwgen set ciabmesh node node1 endpoint '132.65.71.21:50000' listen-port 50000
+    vwgen set ciabmesh node node1 endpoint '132.65.71.21:50000' listen-port 50000
 
 Now, execute the following for each of your Nodes substituting each Node’s Public Interface IP address:
 
-    $ vwgen set ciabmesh node node1 endpoint '\<public ip node1\>:50000' listen-port 50000
-    $ vwgen set ciabmesh node node2 endpoint '\<public ip node2\>:50000' listen-port 50000
-    $ vwgen set ciabmesh node node3 endpoint '\<public ip node3\>:50000' listen-port 50000
+    vwgen set ciabmesh node node1 endpoint '\<public ip node1\>:50000' listen-port 50000
+    vwgen set ciabmesh node node2 endpoint '\<public ip node2\>:50000' listen-port 50000
+    vwgen set ciabmesh node node3 endpoint '\<public ip node3\>:50000' listen-port 50000
 
 #### Step 9
 
@@ -395,7 +422,7 @@ Show all information we have so far for cursory verification.
 
 The following will also show you each Node’s VTEP IP
 
-    $ vwgen show ciabmesh | more
+    vwgen show ciabmesh | more
 
 **Note:**
 
@@ -412,11 +439,11 @@ Note: Repeat this for each Node or create a script to loop and do it for you
 
 Use vwgen to extract each Node’s FRR config file from the Master config file.
 
-    $ vwgen showconf ciabmesh node1 \> node1.conf
-    $ vwgen showconf ciabmesh node2 \> node2.conf
-    $ vwgen showconf ciabmesh node3 \> node3.conf
+    vwgen showconf ciabmesh node1 \> node1.conf
+    vwgen showconf ciabmesh node2 \> node2.conf
+    vwgen showconf ciabmesh node3 \> node3.conf
 
-### Step 11
+#### Step 11
 
 Copy (`scp` or whatever) each Node’s `nodeN.conf` file to create that actual Node’s Wireguard config
 file located in that Node’s own:
@@ -444,7 +471,7 @@ information.
 Remember, you can get each Node’s VTEP (Virtual Tunnel End Point) IP address by executing in the
 directory where you created the original “master” config file:
 
-    $ vwgen show ciabmesh | more
+    vwgen show ciabmesh | more
 
 Before Proceeding Please Reboot each of your Nodes Now !
 
@@ -455,15 +482,15 @@ SSH into each of your Nodes and start both Wireguard and FRR on all Nodes using 
 CIAB MESH VPN utility bash script from those you copied to each node previously in Step #4
 In each Node execute:
 
-    $ sudo wg-meshup.sh
-    $ sudo frr-start.sh
-    $ sudo bgp-restart.sh
+    sudo wg-meshup.sh
+    sudo frr-start.sh
+    sudo bgp-restart.sh
 
 #### Step 15
 
 On each Node execute to show that Node’s interfaces information:
 
-    $ ip addr
+    ip addr
 
 You should see several additional interfaces on each Node now, including:
 
