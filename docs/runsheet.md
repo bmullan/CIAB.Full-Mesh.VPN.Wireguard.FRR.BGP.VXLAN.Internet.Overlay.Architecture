@@ -360,16 +360,22 @@ In each Node execute:
     $ sudo bgp-restart.sh
 
 ### Step 15
+
 On each Node execute to show that Node’s interfaces information:
-\$ ip addr
+
+    $ ip addr
+
 You should see several additional interfaces on each Node now, including:
-vciabmesh The Node’s VxLAN VTEP Interface and IP
-ciabmesh The Node’s Wireguard VPN Interface and IP
+
+- `vciabmesh`: The Node’s VxLAN VTEP Interface and IP
+- `ciabmesh`: The Node’s Wireguard VPN Interface and IP
+
 Validate that from any Host/Node you can now successfully Ping the IP address of any other
 Host/Node’s LXD Container(s).
 If there is a problem, often is with a mistake made entering IP addresses in one or more Node’s
-/etc/frr/frr.conf file
-Congratulations
+`/etc/frr/frr.conf` file
+
+## Conclusion
 You now have a fully encrypted, Full-Mesh VPN Overlay Network that should work with
 your Servers and VM’s anywhere they are located whether in-house, inter-divisions, or
 inter-Cloud to interconnect LXD Virtual Machines & LXD Containers.
