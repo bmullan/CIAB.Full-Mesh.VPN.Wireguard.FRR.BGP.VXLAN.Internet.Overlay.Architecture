@@ -41,6 +41,8 @@ are one method to get rid of the full mesh of iBGP Peers in your network. While 
   configuration
 
 ### VxWireGuard Background
+
+[VxWireguard-Generator (`vwgen`)](https://github.com/m13253/VxWireguard-Generator) has three layers of IP addresses that it adds to every CIAB
 Network Node’s Wireguard config file (re //etc/wireguard/ciabmesh.net):
 The “public ip” address -
 They are the your Node/Server/Host’s real Public IP Addresses.
