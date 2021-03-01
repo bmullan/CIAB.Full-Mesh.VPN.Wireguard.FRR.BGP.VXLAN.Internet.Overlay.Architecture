@@ -337,13 +337,18 @@ document’s Appendix 1 to each node’s `/etc/frr/` directory and renaming it `
 `/etc/frr/frr.conf` )
 
 ### Step 13
+
+Edit `/etc/frr/frr.conf` on each Node and where indicated in the template add the requested IP address
 information.
+
 Remember, you can get each Node’s VTEP (Virtual Tunnel End Point) IP address by executing in the
 directory where you created the original “master” config file:
-\$ vwgen show ciabmesh | more
+
+    $ vwgen show ciabmesh | more
+
 Before Proceeding Please Reboot each of your Nodes Now !
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAGfCAIAAABUbYLbAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB+klEQVR42u3QMQGAMAAEsQP/crs/K1sNJBJS8Pdss1C9CkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECECESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBCBCBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIhAhAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkQgQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESIQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBGIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgFIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIEIEIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiECECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRCBChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIhAhQoSIm3OOhKptEqoPTvoMDCbq1UwAAAAASUVORK5CYII=)
-Step 1 4
+
+### Step 14
 Start up the CIAB Mesh VPN Internetworking Overlay on each/all Nodes
 SSH into each of your Nodes and start both Wireguard and FRR on all Nodes using the appropriate
 CIAB MESH VPN utility bash script from those you copied to each node previously in Step \#4
