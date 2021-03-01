@@ -387,50 +387,26 @@ Now your Applications and Users in any location can easily access Distributed
 Applications and Databases etc anywhere in the Internet with CIAB’s MESH VPN.
 
 ## Appendix 1
-\# bgp neighbors
-neighbor \<insert Node1’s VTEP IP address here\> remote-as 64512
-neighbor \<insert Node2’s VTEP IP address here\> remote-as 64512
-neighbor \<insert Node3’s VTEP IP address here\> remote-as 64512
-\# route reflectors
-neighbor \<insert Node1’s VTEP IP address here\> route-reflector-client
-neighbor \<insert Node2’s VTEP IP address here\> route-reflector-client
-neighbor \<insert Node3’s VTEP IP address here\> route-reflector-client
-\# Identify this Node’s LXD network (on Host execute \$ lxc list command).
-\# This will advertise each Node’s LXD network through the
-\# BGP Route Reflector’s to the other Nodes in the CIAB Mesh VPN.
-network 10.0.1.0/24
-Appendix \#2
-Fully commented /etc/frr/frr.conf script
-CIAB BGP and VRF Configuration Template for Nodes in a CIAB Secure Mesh Internet Overlay.
-\#===================================================================
-\# Name: CIAB BGP and VRF Configuration Template
-\# CIAB Mesh VPN using BGP, WireGuard and VxLAN
-\# 2019 Brian Mullan (bmullan.mail@gmail.com)
-\#===================================================================
-\# The following is the BGP and BGP Route Reflector Config file for
-\# each NODE in the CIAB MeshVPN.
-\#
-\# There are comments explaining where and what to change for each
-\# individual NODE.
-\#
-\# Copy this Template and edit it to insert appropriate IP addresses etc.
-\#
-\# Then SCP the template file to its corresponding Server/Host/Node
-\# and rename it on each node to "/etc/frr/frr.conf" as it will become the Free Range Routing's
-\# (FRR) config file when FRR is run.
-\#
-\#==={Begin FRR BGP Configuration - Copy everything below this line}==
-\#
-\# NOTE:
-\#
-\# If you use Quagga comments begin with an exclamation "!"
-\# If you use FRR you can use either a Hash or exclamation mark.
-\# I recommend using FRR as it seems to be moving faster that quaga todaay.
-\#
-\#===================================================================
-\# Default to using syslog. /etc/rsyslog.d/45-frr.conf places the log
-\# in /var/log/frr/frr.log
-log syslog informational
+
+Note: copy this to create each node’s initial `/etc/frr/frr.conf` then edit that file
+
+The `/etc/frr/frr.conf` template without comments:
+
+    log syslog informational
+    hostname node1
+    password \<enter some password\>
+    enable password \<enter some "enable" password if you use FRR's VTYSH to do configs\>
+    router bgp 64512
+    bgp router-id \<insert "this" NODEs VTEP IP address here\>
+    neighbor \<insert Node1’s VTEP IP address here\> remote-as 64512
+    neighbor \<insert Node2’s VTEP IP address here\> remote-as 64512
+    neighbor \<insert Node3’s VTEP IP address here\> remote-as 64512
+    neighbor \<insert Node1’s VTEP IP address here\> route-reflector-client
+    neighbor \<insert Node2’s VTEP IP address here\> route-reflector-client
+    neighbor \<insert Node3’s VTEP IP address here\> route-reflector-client
+    network 10.0.1.0/24
+
+## Appendix 2
 \#===================================================================
 \# CIAB Ubuntu BGP and BGP Route Reflectors Configuration
 \# Each Node will require is FRR config file located in - /etc/frr/frr.conf
