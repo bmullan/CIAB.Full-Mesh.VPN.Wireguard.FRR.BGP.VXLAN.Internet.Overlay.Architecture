@@ -70,16 +70,23 @@ Indicator (KPI) success factors:
 1. Multi-Cloud and Hybrid Cloud capable
 
 ## Installation Guide
-B) Make sure LXD is installed & “init’d” on all Nodes.
-C) Steps \# 5, 6, 7, 8, 9, 10, 11
-need only be performed on one node (you choose) to perform configurations that will be used
-later to configure all nodes.
-D) Steps \# 1, 2, 3, 4, 12, 13, 14, 15
-must be performed on all Nodes/Hosts/ Servers/V M s and configuration files for FRR’s BGP
-(/etc/frr/bgpd.conf) edited for appropriate IP addresses in the template supplied in Appendix \#1.
-E) This Guide Installation does not cover multi-tenant configuration although I have done this
-using additional configuration steps contained in a separate document.
-Step 1
+
+### Assumptions
+
+1. Installation is being done on either Ubuntu 18.04 or Ubuntu 20.04 Desktop or Server systems.
+   By “system” we mean a some PC/Laptop/Server, Virtual Machines or a Cloud Instances.
+   Any or all of which can be part of your CIAB Mesh VPN Overlay Network.
+1. Make sure LXD is installed initalized on all Nodes.
+1. Steps 5, 6, 7, 8, 9, 10, 11
+   need only be performed on one node (you choose) to perform configurations that will be used
+   later to configure all nodes.
+1. Steps 1, 2, 3, 4, 12, 13, 14, 15
+   must be performed on all Nodes/Hosts/ Servers/V M s and configuration files for FRR’s BGP
+   (`/etc/frr/bgpd.conf`) edited for appropriate IP addresses in the template supplied in Appendix 1.
+1. This Guide Installation does not cover multi-tenant configuration although I have done this
+   using additional configuration steps contained in a separate document.
+
+### Step 1
 Create an initial Ubuntu 18.04 or Ubuntu 20.04 Node... re a Server/VM or Cloud-Instance which you
 intend to become the Nodes in your Mesh VPN Overlay.
 Step 2
