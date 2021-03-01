@@ -317,12 +317,20 @@ Use vwgen to extract each Node’s FRR config file from the Master config file.
     $ vwgen showconf ciabmesh node3 \> node3.conf
 
 ### Step 11
+
+Copy (`scp` or whatever) each Node’s `nodeN.conf` file to create that actual Node’s Wireguard config
 file located in that Node’s own:
-/etc/wireguard/ciabmesh.conf
-So for Node1, you will be copying node1.conf and renaming it to ciabmesh.conf in the /etc/wireguard
-directory of the Node1 Server/VM/cloud-instance.
-Note: When you installed FRR in Step 2 it would have created /etc/frr/
-Step 12
+
+    /etc/wireguard/ciabmesh.conf
+
+So for `Node1`, you will be copying `node1.conf` and renaming it to `ciabmesh.conf` in the `/etc/wireguard`
+directory of the `Node1` Server/VM/cloud-instance.
+
+**Note:**
+
+When you installed FRR in Step 2 it would have created /etc/frr/
+
+### Step 12
 Copy the Free Range Routing (FRR) CIAB BGP and VRF Configuration Template from this
 document’s Appendix \#1 to each node’s /etc/frr/ directory and renaming it “frr.conf” (re
 /etc/frr/frr.conf )
