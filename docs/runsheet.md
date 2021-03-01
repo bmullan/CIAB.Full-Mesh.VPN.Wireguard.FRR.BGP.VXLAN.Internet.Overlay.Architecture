@@ -1,4 +1,4 @@
-# CIAB Mesh VPN Internetwork Overlay Architecture
+## Getting Started
 
 2019 by Brian Mullan (bmullan.mail@gmail.com)
 
@@ -8,7 +8,7 @@ Multi-Node, Multi-Cloud/Hybrid Systems
 The Cloud in a Box (CIAB) Mesh VPN is a software-defined wide-area network that is
 abstracted from hardware, creating a virtualized network overlay.
 
-## CIAB Mesh VPN Internet Overlay Architecture
+### Architecture
 
 The CIAB Mesh VPN Internet Overlay Architecture is implemented using several open source
 linux networking tools/apps, Routing and protocol capabilities including:
@@ -22,7 +22,7 @@ Virtual eXtensible LAN (VxLAN) – [an overview of VxLAN and Linux by Vincent Be
 A VxLAN network is a virtual Layer 2 network constructed on a Layer 3 network to enable
 communication of hosts at Layer 3
 
-### BGP Route Reflectors
+#### BGP Route Reflectors
 
 [Vincent Bernat provides an excellent general overview](https://vincent.bernat.ch/en/blog/2017-vxlan-linux).
 
@@ -39,7 +39,7 @@ are one method to get rid of the full mesh of iBGP Peers in your network. While 
 - [VxWireGuard-Generator](https://github.com/m13253/VxWireguard-Generator) - Utility to generate V x LAN over Wireguard mesh SD-WAN
   configuration
 
-### VxWireGuard Background
+#### VxWireGuard Background
 
 [VxWireguard-Generator (`vwgen`)](https://github.com/m13253/VxWireguard-Generator) has three layers of IP addresses that it adds to every CIAB
 Network Node’s Wireguard config file (re //etc/wireguard/ciabmesh.net):
@@ -56,7 +56,7 @@ reside in one single subnet..
 If you are not satisfied with the automatic allocation, for IPv4, you can edit the address manually; for
 IPv6, you can add more than one address and set one of them as Primary.
 
-## Goals of the CIAB Mesh VPN Internetworking Overlay Project
+### Goals of the CIAB Mesh VPN Internetworking Overlay Project
 
 The ideal solution to satisfy the goals of this project will include my identified Key Performance
 Indicator (KPI) success factors:
@@ -68,9 +68,9 @@ Indicator (KPI) success factors:
 1. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet
 1. Multi-Cloud and Hybrid Cloud capable
 
-## Installation Guide
+### Installation Guide
 
-### Assumptions
+#### Assumptions
 
 1. Installation is being done on either Ubuntu 18.04 or Ubuntu 20.04 Desktop or Server systems.
    By “system” we mean a some PC/Laptop/Server, Virtual Machines or a Cloud Instances.
@@ -85,12 +85,12 @@ Indicator (KPI) success factors:
 1. This Guide Installation does not cover multi-tenant configuration although I have done this
    using additional configuration steps contained in a separate document.
 
-### Step 1
+#### Step 1
 
 Create an initial Ubuntu 18.04 or Ubuntu 20.04 Node... re a Server/VM or Cloud-Instance which you
 intend to become the Nodes in your Mesh VPN Overlay.
 
-### Step 2
+#### Step 2
 
 Install Free Range Routing (FRR) on each of your Nodes:
 
@@ -100,7 +100,7 @@ Install Wireguard and Wireguard-tools on each of your Nodes:
 
     sudo apt install wireguard wireguard-tools -y
 
-### Step 3
+#### Step 3
 
 Edit the FRR daemons Config File on each of your Nodes (use Nano, Vi or whatever text editor):
 
@@ -116,12 +116,12 @@ to:
 
 Then save the file with the changes made in Step 3.
 
-### Step 4
+#### Step 4
 
 Copy (`scp`) all of the CIAB Mesh VPN Utility Bash scripts to each Node into a directory where you
 can execute them and make all of the CIAB Mesh VPN Utility Bash scripts executable.
 
-#### Scripts and their purpose
+##### Scripts and their purpose
 
 - `wg-meshup.sh`: Start Wireguard on a Node
 - `wg-meshdown.sh`: Shutdown Wireguard on a Node
@@ -139,7 +139,7 @@ given prefix and either a given MAC-48 address (an
 Ethernet hardware address) or a randomly drawn host
 number.
 
-### Step 5
+#### Step 5
 
 Install/configure VxWireguard-Generator.
 VxWireguard-Generator is a tool which will be used to first generate a Master WireGuard Mesh
@@ -175,7 +175,7 @@ Install VxWirguard-Generator misc files
     $ python3 setup.py build
     $ sudo python3 setup.py install --force
 
-### Step 6
+#### Step 6
 
 Create a Master config file for our CIAB Mesh VPN using [VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)
 
@@ -221,7 +221,7 @@ address Pools for the configuration of your CIAB Mesh Internetwork.
 
     $ vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
 
-### Step 7
+#### Step 7
 
 Decide now if you want to create an exact number of Node Config files or if you want to generate more
 (many) than you need today.
@@ -249,7 +249,7 @@ This would create a Master config file with 50 Node Configs each named:
 `mycn01`, `mycn02`, ... `mycn49`, `mycn50`. Each with its VxLAN TEP IP, the Node’s
 public ip and its encryption key to become part of the CIAB Mesh network.
 
-#### Background Note
+##### Background Note
 
 The Internet Assigned Numbers Authority (IANA) regulates what Port Numbers may be used
 for what purposes on the Internet.
@@ -269,7 +269,7 @@ Given the previous Note, you should pick and use an Ephemeral Port Number betwee
 65535 for your CIAB Mesh Internetwork configuration use.
 For this document and our examples, I’ll use Port 50000.
 
-### Step 8
+#### Step 8
 
 Set public ip of `node1`, `node2` and `node3`, to each Node’s Public Interface IP address (note: either
 IPv4 or IPv6 will work).
@@ -287,7 +287,7 @@ Now, execute the following for each of your Nodes substituting each Node’s Pub
     $ vwgen set ciabmesh node node2 endpoint '\<public ip node2\>:50000' listen-port 50000
     $ vwgen set ciabmesh node node3 endpoint '\<public ip node3\>:50000' listen-port 50000
 
-### Step 9
+#### Step 9
 
 Show all information we have so far for cursory verification.
 
@@ -302,7 +302,7 @@ The following will also show you each Node’s VTEP IP
 You may want to execute the above command now and record/copy the VTEP IP for
 each Node.
 
-### Step 10
+#### Step 10
 
 `vwgen`, the VxWireguard-Generator tool, can be used to parse and extract from the Master Config file
 (ciabvpn.conf), each Node’s individual Wireguard/VxLAN Config file.
@@ -330,13 +330,13 @@ directory of the `Node1` Server/VM/cloud-instance.
 
 When you installed FRR in Step 2 it would have created /etc/frr/
 
-### Step 12
+#### Step 12
 
 Copy the Free Range Routing (FRR) CIAB BGP and VRF Configuration Template from this
 document’s Appendix 1 to each node’s `/etc/frr/` directory and renaming it `frr.conf` (re
 `/etc/frr/frr.conf` )
 
-### Step 13
+#### Step 13
 
 Edit `/etc/frr/frr.conf` on each Node and where indicated in the template add the requested IP address
 information.
@@ -348,7 +348,7 @@ directory where you created the original “master” config file:
 
 Before Proceeding Please Reboot each of your Nodes Now !
 
-### Step 14
+#### Step 14
 
 Start up the CIAB Mesh VPN Internetworking Overlay on each/all Nodes
 SSH into each of your Nodes and start both Wireguard and FRR on all Nodes using the appropriate
@@ -359,7 +359,7 @@ In each Node execute:
     $ sudo frr-start.sh
     $ sudo bgp-restart.sh
 
-### Step 15
+#### Step 15
 
 On each Node execute to show that Node’s interfaces information:
 
@@ -375,7 +375,7 @@ Host/Node’s LXD Container(s).
 If there is a problem, often is with a mistake made entering IP addresses in one or more Node’s
 `/etc/frr/frr.conf` file
 
-## Conclusion
+### Conclusion
 
 Congratulations.
 
@@ -386,7 +386,7 @@ inter-Cloud to interconnect LXD Virtual Machines & LXD Containers.
 Now your Applications and Users in any location can easily access Distributed
 Applications and Databases etc anywhere in the Internet with CIAB’s MESH VPN.
 
-## Appendix 1
+### Appendix 1
 
 Note: copy this to create each node’s initial `/etc/frr/frr.conf` then edit that file
 
@@ -406,7 +406,7 @@ The `/etc/frr/frr.conf` template without comments:
     neighbor \<insert Node3’s VTEP IP address here\> route-reflector-client
     network 10.0.1.0/24
 
-## Appendix 2
+### Appendix 2
 
 The `/etc/frr/frr.conf` template with comments:
 

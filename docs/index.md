@@ -1,4 +1,4 @@
-## Cloud In A Box: Full Mesh VPN Internet Overlay
+# Cloud In A Box: Full Mesh VPN Internet Overlay
 
 The ***Cloud In A Box (CIAB)*** project introduces what we describe as the 
 ***CIAB Full Mesh VPN Internet Overlay Architecture***.
@@ -7,7 +7,7 @@ The ***Cloud In A Box (CIAB)*** project introduces what we describe as the
 step-by-step as I configure all of this on Two different Clouds  and a local VM.   There are only about 14 steps.
 
 ---  
-### Definitions  
+## Definitions  
 
 ***Full Mesh** means any node can reach any other node directly without going through some central node.*  
 ***Virtual Private Network (VPN)** means your entire Internet Overlay is fully encrypted end-to-end.*  
@@ -82,9 +82,9 @@ our Installation Guide see:
 - **1 - an LXD VM on one of my local servers**  *traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up.*
 
 At the end of Video #2 you will see Ping tests showing connectivity to/from ANY Node to/from ANY other Node's LXD Containers which are
-on ***private*** 10.x.x.x networks within each Node.  
+on ***private*** `10.x.x.x` networks within each Node.  
 
-The 10.x.x.x network range is **not** Routeable over the Internet thus proving the success of the 
+The `10.x.x.x` network range is **not** Routeable over the Internet thus proving the success of the 
 ***CIAB Full-Mesh VPN Internet Overlay*** in providing that universal inter-connectivity.
 
 All Servers and LXD VM and LXD containers are running Ubuntu 20.04 LTS.
