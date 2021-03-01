@@ -303,14 +303,20 @@ You may want to execute the above command now and record/copy the VTEP IP for
 each Node.
 
 ### Step 10
+
+`vwgen`, the VxWireguard-Generator tool, can be used to parse and extract from the Master Config file
 (ciabvpn.conf), each Node’s individual Wireguard/VxLAN Config file.
 Note: Repeat this for each Node or create a script to loop and do it for you
-Example: Use vwgen to extract each Node’s FRR config file from the Master config file.
-\$ vwgen showconf ciabmesh node1 \> node1.conf
-\$ vwgen showconf ciabmesh node2 \> node2.conf
-\$ vwgen showconf ciabmesh node3 \> node3.conf
-Step 11
-Copy (scp or whatever) each Node’s “nodeN.conf” file to create that actual Node’s Wireguard config
+
+**Example:**
+
+Use vwgen to extract each Node’s FRR config file from the Master config file.
+
+    $ vwgen showconf ciabmesh node1 \> node1.conf
+    $ vwgen showconf ciabmesh node2 \> node2.conf
+    $ vwgen showconf ciabmesh node3 \> node3.conf
+
+### Step 11
 file located in that Node’s own:
 /etc/wireguard/ciabmesh.conf
 So for Node1, you will be copying node1.conf and renaming it to ciabmesh.conf in the /etc/wireguard
