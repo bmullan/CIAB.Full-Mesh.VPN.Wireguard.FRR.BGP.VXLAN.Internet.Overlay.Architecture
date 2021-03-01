@@ -92,11 +92,16 @@ Create an initial Ubuntu 18.04 or Ubuntu 20.04 Node... re a Server/VM or Cloud-I
 intend to become the Nodes in your Mesh VPN Overlay.
 
 ### Step 2
+
 Install Free Range Routing (FRR) on each of your Nodes:
-\$ sudo apt install frr -y
+
+    sudo apt install frr -y
+
 Install Wireguard and Wireguard-tools on each of your Nodes:
-\$ sudo apt install wireguard wireguard-tools -y
-Step 3
+
+    sudo apt install wireguard wireguard-tools -y
+
+### Step 3
 Edit the FRR daemons Config File on each of your Nodes (use Nano, Vi or whatever text editor):
 \$ sudo nano /etc/frr/daemons
 Change :
