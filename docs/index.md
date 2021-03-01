@@ -47,7 +47,7 @@ step-by-step as I configure all of this on Two different Clouds and a local VM. 
 **\*Overlay** Network overlays are a method of using software virtualization to create additional layers
 of network abstraction (or software-based network overlays) that can be run on top of the physical network,
 often providing new applications or enhanced security benefits.\*
-**\*VXLAN** [here is a diagram of the VXLAN Model](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/issues/1)\*
+**\*VXLAN** [here is a diagram of the VXLAN Model](https://github.com/bmullan/CIAB.Full-Mesh.VPN.WireGuard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/issues/1)\*
 
 ---
 
@@ -60,14 +60,14 @@ The ideal solution to satisfy the goals of this project will include the followi
 
 ---
 
-The CIAB Full Mesh VPN Inteernet Overlay Architecture is completly implemented using
+The CIAB Full Mesh VPN Internet Overlay Architecture is completely implemented using
 Open Source tools and applications:
 
 - **[Ubuntu Linux](https://ubuntu.com/server/docs)**
-- **[Wireguard VPN](https://www.wireguard.com/)**
-- **[VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)**
+- **[WireGuard VPN](https://www.wireguard.com/)**
+- **[VxWireGuard-Generator](https://github.com/m13253/VxWireGuard-Generator)**
 - **[Free Range Routing - FRR](https://frrouting.org/)**
-- **[FRR's BGP and BGP-VRF protocols](http://docs.frrouting.org/en/latest/bgp.html)**
+- **[FRR BGP and BGP-VRF protocols](http://docs.frrouting.org/en/latest/bgp.html)**
 - **[Virtual eXtended LAN - VXLAN](https://user-images.githubusercontent.com/1682855/89578990-02194980-d801-11ea-8f39-62c74b625732.png)**
 - **[LXD VMs and Containers](https://linuxcontainers.org/lxd/docs/master/)**
 
@@ -75,16 +75,19 @@ Open Source tools and applications:
 
 For the **Complete Step-by-Step Installation/Configuration Instruction Guide** see:
 
+<!-- /* spellchecker: disable */ -->
+
 - **[The CIAB Mesh VPN Internet Overlay Installation Guide](docs/runsheet.md)**
+<!-- /* spellchecker: enable */ -->
 
 To Download the **CIAB Mesh VPN Utility Scripts** see:
 
-- **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bbros-dev/ciab/blob/issue-4/scripts/)**
+- **[CIAB Mesh VPN Utility Scripts - used to start/stop/restart etc WireGuard, FRR, BGP](https://github.com/bbros-dev/ciab/blob/issue-4/scripts/)**
 
-_Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM's and LXD Containers
+_Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM and LXD Containers
 running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cloud Datacenters._
 
-All **data traffic is highly encrypted end-to-end** by Wireguard's VPN.
+All **data traffic is highly encrypted end-to-end** by WireGuard VPN.
 
 VxLAN supports Layer2/3 with _Layer 3 preventing flooding your Overlay Network_ with **Broadcast, Unknown and Multicast (BUM) traffic**.
 
@@ -95,7 +98,7 @@ our Installation Guide see:
 
 ### Video #1
 
-- **[Introduction to CIAB's Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long
+- **[Introduction to CIAB Full-Mesh VPN Internet Overlay](https://www.youtube.com/watch?v=XvjMMuIItF4&t=3s)** - approx 10 minutes long
 
 ### Video #2
 
@@ -163,20 +166,20 @@ are one method to get rid of the full mesh of iBGP Peers in your network. While 
 - [WireGuard](https://www.wireguard.com/) – WireGuard VPN is now built into the Linux Kernel itself. WireGuard is a fast and
   modern VPN that utilizes state-of-the-art cryptography.
 - [LXD](https://linuxcontainers.org/lxd/introduction/) – LXD is a System VM and Container Hypervisor
-- [VxWireGuard-Generator](https://github.com/m13253/VxWireguard-Generator) - Utility to generate V x LAN over Wireguard mesh SD-WAN
+- [VxWireGuard-Generator](https://github.com/m13253/VxWireGuard-Generator) - Utility to generate V x LAN over WireGuard mesh SD-WAN
   configuration
 
 #### VxWireGuard Background
 
-[VxWireguard-Generator (`vwgen`)](https://github.com/m13253/VxWireguard-Generator) has three layers of IP addresses that it adds to every CIAB
-Network Node’s Wireguard config file (re //etc/wireguard/ciabmesh.net):
+[VxWireGuard-Generator (`vwgen`)](https://github.com/m13253/VxWireGuard-Generator) has three layers of IP addresses that it adds to every CIAB
+Network Node’s WireGuard config file (re //etc/wireguard/ciabmesh.net):
 The “public ip” address -
 They are the your Node/Server/Host’s real Public IP Addresses.
-Wireguard uses these addresses to establish VPN Tunnels between Nodes.
+WireGuard uses these addresses to establish VPN Tunnels between Nodes.
 The VxLAN Virtual Tunnel End Point (VTEP) address -
 They are allocated randomly from 169.254.0.0/16 and IPv6 link-local address space, used to
 build the VxLAN network overlay.
-The IP addresses used by Wireguard: -
+The IP addresses used by WireGuard: -
 They are allocated from pool-ipv4 and pool-ipv6 you specify during configuration.
 Since all nodes are then connected to one "virtual" LAN, preferably you may want these addresses to
 reside in one single subnet..
@@ -202,12 +205,12 @@ Indicator (KPI) success factors:
 1. Installation is being done on either Ubuntu 18.04 or Ubuntu 20.04 Desktop or Server systems.
    By “system” we mean a some PC/Laptop/Server, Virtual Machines or a Cloud Instances.
    Any or all of which can be part of your CIAB Mesh VPN Overlay Network.
-1. Make sure LXD is installed initalized on all Nodes.
+1. Make sure LXD is installed initialized on all Nodes.
 1. Steps 5, 6, 7, 8, 9, 10, 11
    need only be performed on one node (you choose) to perform configurations that will be used
    later to configure all nodes.
 1. Steps 1, 2, 3, 4, 12, 13, 14, 15
-   must be performed on all Nodes/Hosts/ Servers/V M s and configuration files for FRR’s BGP
+   must be performed on all Nodes/Hosts/ Servers/V M s and configuration files for FRR BGP
    (`/etc/frr/bgpd.conf`) edited for appropriate IP addresses in the template supplied in Appendix 1.
 1. This Guide Installation does not cover multi-tenant configuration although I have done this
    using additional configuration steps contained in a separate document.
@@ -223,7 +226,7 @@ Install Free Range Routing (FRR) on each of your Nodes:
 
     sudo apt install frr -y
 
-Install Wireguard and Wireguard-tools on each of your Nodes:
+Install WireGuard and WireGuard-tools on each of your Nodes:
 
     sudo apt install wireguard wireguard-tools -y
 
@@ -250,16 +253,16 @@ can execute them and make all of the CIAB Mesh VPN Utility Bash scripts executab
 
 ##### Scripts and their purpose
 
-- `wg-meshup.sh`: Start Wireguard on a Node
-- `wg-meshdown.sh`: Shutdown Wireguard on a Node
-- `frr-start.sh`: Start FRR on a Node NOTE: Wireguard must be UP on a Node before Starting FRR
+- `wg-meshup.sh`: Start WireGuard on a Node
+- `wg-meshdown.sh`: Shutdown WireGuard on a Node
+- `frr-start.sh`: Start FRR on a Node NOTE: WireGuard must be UP on a Node before Starting FRR
 - `frr-restart.sh`: Stop then Start FRR on a Node
 - `frr-status.sh`: Show FRR Status on a Node
 - `frr-stop.sh`: Stop FRR on a Node
-- `bgp-start.sh`: Start FRR’s BGP on a Node NOTE: you must start FRR before executing this script
-- `bgp-restart.sh`: Stop/Start FRR’s BGP on a Node NOTE: you must start FRR before executing this script
-- `bgp-stop.sh`: Stop FRR’s BGP on a Node
-- `generate-ipv6-address`: Used by wg-meshup.sh to assign a unique IPv6 address to that node’s Wireguard Interface
+- `bgp-start.sh`: Start FRR BGP on a Node NOTE: you must start FRR before executing this script
+- `bgp-restart.sh`: Stop/Start FRR BGP on a Node NOTE: you must start FRR before executing this script
+- `bgp-stop.sh`: Stop FRR BGP on a Node
+- `generate-ipv6-address`: Used by wg-meshup.sh to assign a unique IPv6 address to that node’s WireGuard Interface
 
 [`generate-ipv6-address`](https://github.com/althea-net/generate-ipv6-address) builds IPv6 addresses from a
 given prefix and either a given MAC-48 address (an
@@ -268,35 +271,35 @@ number.
 
 #### Step 5
 
-Install/configure VxWireguard-Generator.
-VxWireguard-Generator is a tool which will be used to first generate a Master WireGuard Mesh
+Install/configure VxWireGuard-Generator.
+VxWireGuard-Generator is a tool which will be used to first generate a Master WireGuard Mesh
 Config file.
-After the Master Config file has been built we will use the VxWireguard-Generator again to extract
-each individual Node’s Wireguard/VxLAN ciabmesh.conf config file.
+After the Master Config file has been built we will use the VxWireGuard-Generator again to extract
+each individual Node’s WireGuard/VxLAN ciabmesh.conf config file.
 Log into the Node using ssh or however you do it.
 Make sure UNZIP is installed:
 
     sudo apt install unzip -y
 
-Use “wget” to retrieve the VxWireguard-Generator .ZIP file from github (install wget if its not
+Use “wget” to retrieve the VxWireGuard-Generator .ZIP file from github (install wget if its not
 already).
 
-    wget https://github.com/m13253/VxWireguard-Generator/archive/master.zip
+    wget https://github.com/m13253/VxWireGuard-Generator/archive/master.zip
 
-Unzip the VxWireguard-Generator
+Unzip the VxWireGuard-Generator
 
     unzip ./master.zip
 
 Change into the unzipped Directory that was created:
 
-    cd ./VxWireguard-Generator-master
+    cd ./VxWireGuard-Generator-master
 
-Install pre-requisites for VxWireguard-Generator.
+Install pre-requisites for VxWireGuard-Generator.
 Install python3-pip:
 
     sudo apt install python3-pip -y
 
-Install VxWirguard-Generator misc files
+Install VxWireGuard-Generator misc files
 
     sudo pip3 install -r requirements.txt
     python3 setup.py build
@@ -304,7 +307,7 @@ Install VxWirguard-Generator misc files
 
 #### Step 6
 
-Create a Master config file for our CIAB Mesh VPN using [VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)
+Create a Master config file for our CIAB Mesh VPN using [VxWireGuard-Generator](https://github.com/m13253/VxWireGuard-Generator)
 
 First, create a work directory (let’s call it “ciabvpn”):
 
@@ -314,8 +317,9 @@ change into that work directory
 
     cd ./ciabvpn
 
-NOTE: VxWireguard-Generator’s main cli tool is `vwgen`.
+NOTE: VxWireGuard-Generator’s main cli tool is `vwgen`.
 To view a `vwgen` help page:
+<!-- /* spellchecker: disable */ -->
 
     $ vwgen --help
 
@@ -333,17 +337,18 @@ To view a `vwgen` help page:
     genkey: Generates a new private key and writes it to stdout
     genpsk: Generates a new preshared key and writes it to stdout
     pubkey: Reads a private key from stdin and writes a public key to stdout
+<!-- /* spellchecker: enable */ -->
 
 You may pass `--help` to any of these sub-commands to view usage.
 
-Start to build the Master VxWireguard-Configuration file (we’ll call ours ciabmesh):
+Start to build the Master VxWireGuard-Configuration file (we’ll call ours ciabmesh):
 
     vwgen add ciabmesh
 
 This will create a file a Master config file called `ciabmesh.conf`
 Set the IPv4 and IPv6 Address Pool for our CIAB Mesh Internet Overlay.
 
-The following will cause VxWireguard-Generator to utilize IP addresses from these IPv4 and IPv6
+The following will cause VxWireGuard-Generator to utilize IP addresses from these IPv4 and IPv6
 address Pools for the configuration of your CIAB Mesh Internetwork.
 
     vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
@@ -431,8 +436,8 @@ each Node.
 
 #### Step 10
 
-`vwgen`, the VxWireguard-Generator tool, can be used to parse and extract from the Master Config file
-(ciabvpn.conf), each Node’s individual Wireguard/VxLAN Config file.
+`vwgen`, the VxWireGuard-Generator tool, can be used to parse and extract from the Master Config file
+(ciabvpn.conf), each Node’s individual WireGuard/VxLAN Config file.
 Note: Repeat this for each Node or create a script to loop and do it for you
 
 **Example:**
@@ -445,7 +450,7 @@ Use vwgen to extract each Node’s FRR config file from the Master config file.
 
 #### Step 11
 
-Copy (`scp` or whatever) each Node’s `nodeN.conf` file to create that actual Node’s Wireguard config
+Copy (`scp` or whatever) each Node’s `nodeN.conf` file to create that actual Node’s WireGuard config
 file located in that Node’s own:
 
     /etc/wireguard/ciabmesh.conf
@@ -478,7 +483,7 @@ Before Proceeding Please Reboot each of your Nodes Now !
 #### Step 14
 
 Start up the CIAB Mesh VPN Internetworking Overlay on each/all Nodes
-SSH into each of your Nodes and start both Wireguard and FRR on all Nodes using the appropriate
+SSH into each of your Nodes and start both WireGuard and FRR on all Nodes using the appropriate
 CIAB MESH VPN utility bash script from those you copied to each node previously in Step #4
 In each Node execute:
 
@@ -494,8 +499,10 @@ On each Node execute to show that Node’s interfaces information:
 
 You should see several additional interfaces on each Node now, including:
 
+<!-- /* spellchecker: disable */ -->
 - `vciabmesh`: The Node’s VxLAN VTEP Interface and IP
-- `ciabmesh`: The Node’s Wireguard VPN Interface and IP
+- `ciabmesh`: The Node’s WireGuard VPN Interface and IP
+<!-- /* spellchecker: enable */ -->
 
 Validate that from any Host/Node you can now successfully Ping the IP address of any other
 Host/Node’s LXD Container(s).
@@ -507,11 +514,11 @@ If there is a problem, often is with a mistake made entering IP addresses in one
 Congratulations.
 
 You now have a fully encrypted, Full-Mesh VPN Overlay Network that should work with
-your Servers and VM’s anywhere they are located whether in-house, inter-divisions, or
+your Servers and VM anywhere they are located whether in-house, inter-divisions, or
 inter-Cloud to interconnect LXD Virtual Machines & LXD Containers.
 
 Now your Applications and Users in any location can easily access Distributed
-Applications and Databases etc anywhere in the Internet with CIAB’s MESH VPN.
+Applications and Databases etc anywhere in the Internet with CIAB MESH VPN.
 
 ### Appendix 1
 
@@ -522,7 +529,7 @@ The `/etc/frr/frr.conf` template without comments:
     log syslog informational
     hostname node1
     password \<enter some password\>
-    enable password \<enter some "enable" password if you use FRR's VTYSH to do configs\>
+    enable password \<enter some "enable" password if you use FRR VTYSH to do configs\>
     router bgp 64512
     bgp router-id \<insert "this" NODEs VTEP IP address here\>
     neighbor \<insert Node1’s VTEP IP address here\> remote-as 64512
@@ -551,7 +558,7 @@ The `/etc/frr/frr.conf` template with comments:
     # Copy this Template and edit it to insert appropriate IP addresses etc.
     #
     # Then SCP the template file to its corresponding Server/Host/Node
-    # and rename it on each node to "/etc/frr/frr.conf" as it will become the Free Range Routing's
+    # and rename it on each node to "/etc/frr/frr.conf" as it will become the Free Range Routing
     # (FRR) config file when FRR is run.
     #
     #==={Begin FRR BGP Configuration - Copy everything below this line}==
@@ -560,7 +567,7 @@ The `/etc/frr/frr.conf` template with comments:
     #
     # If you use Quagga comments begin with an exclamation "!"
     # If you use FRR you can use either a Hash or exclamation mark.
-    # I recommend using FRR as it seems to be moving faster that quaga todaay.
+    # I recommend using FRR as it seems to be moving faster that Quagga today.
     #
     #===================================================================
     # Default to using syslog. /etc/rsyslog.d/45-frr.conf places the log
@@ -570,18 +577,18 @@ The `/etc/frr/frr.conf` template with comments:
     # CIAB Ubuntu BGP and BGP Route Reflectors Configuration
     # Each Node will require is FRR config file located in - /etc/frr/frr.conf
     #
-    # 2016 brian mullan (ciab) for Architectural Design combining
+    # 2016 Brian Mullan (ciab) for Architectural Design combining
     # LXD, BGP, BGP Route Reflectors, VxLAN and WireGuard to create
     # an Internet Overlay Network VPN.
     #===================================================================
     # FRR BGPd configuration file for CIAB network node.
     #
-    # Node’s FRR config includes the Virtual Routing and Forwarding (re VRFs)
+    # Node’s FRR config includes the Virtual Routing and Forwarding (re VRF)
     # defined for each of the other LXD Host/Server nodes in the rest of the CIAB Mesh Network.
     #===================================================================
     hostname node1
     password \<enter some password\>
-    enable password \<enter some "enable" password if you use FRR's VTYSH to do configs\>
+    enable password \<enter some "enable" password if you use FRR VTYSH to do configs\>
     #===================================================================
     # bgp multiple-instances...
     #===================================================================
@@ -592,7 +599,7 @@ The `/etc/frr/frr.conf` template with comments:
     # 1) You can ONLY use IANA approved "Private" AS Numbers.
     # REFER to Section 5 - https://tools.ietf.org/html/rfc6996
     #
-    # 2) Both Quagga & FRR BGPd support "multiple VRF instance"
+    # 2) Both Quagga & FRR BGP support "multiple VRF instance"
     # configurations where in the Config you can designate
     # Multiple AS Numbers. To utilize this in multi-tenant use-cases
     # please research this topic if your intent is to implement one unique AS number
@@ -609,10 +616,10 @@ The `/etc/frr/frr.conf` template with comments:
     # BGP AS for tenant1
     router bgp 64512
     #===================================================================
-    # Node0 is a Node using its VRFs to provide
+    # Node0 is a Node using its VRF to provide
     # Routing information to each of its Peers.
     #
-    # Add BGP Peer nodes. One entry for each WireGuardud LXD Host/Server
+    # Add BGP Peer nodes. One entry for each WireGuarded LXD Host/Server
     # node using that Host/Server's VxLAN Tunnel End Point (TEP)
     # interface IP address and the same Autonomous System (AS) number as
     # defined above.
@@ -625,10 +632,10 @@ The `/etc/frr/frr.conf` template with comments:
     #===================================================================
     bgp router-id \<insert "this" Node’s VTEP IP address here\>
     #===================================================================
-    # As Node0 is a Node using its VRFs to provide
+    # As Node0 is a Node using its VRF to provide
     # Routing information to each of its sub-ordinate Peers.
     #
-    # Add BGP Peer nodes. One entry for each WireGuardud LXD Host/Server
+    # Add BGP Peer nodes. One entry for each WireGuarded LXD Host/Server
     # Node using that Host/Server's WireGuard VxLAN interface IP address
     # and the same Autonomous System (AS) number as defined above.
     #

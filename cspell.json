@@ -1,0 +1,46 @@
+// cSpell Settings
+{
+  // Version of the setting file.  Always 0.1
+  "version": "0.1",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "bernat",
+    "bgpd",
+    "ciab",
+    "ciabmesh",
+    "ciabvpn",
+    "datacenters",
+    "frr",
+    "genkey",
+    "hetzner",
+    "internetwork",
+    "internetworking",
+    "lxdbr",
+    "mbps",
+    "meshdown",
+    "meshup",
+    "mkdir",
+    "mullan",
+    "multicast",
+    "mycn",
+    "ospf",
+    "routeable",
+    "rsyslog",
+    "showconf",
+    "vm",
+    "vrf",
+    "vtep",
+    "vtysh",
+    "vwgen",
+    "vxlan",
+    "vxwireguard",
+    "wifi",
+    "youtube"
+  ],
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": ["wip"]
+}
