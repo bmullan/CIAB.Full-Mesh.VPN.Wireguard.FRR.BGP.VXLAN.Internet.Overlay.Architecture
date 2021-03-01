@@ -444,12 +444,12 @@ each Node.
 #### Step 10
 
 `vwgen`, the VxWireGuard-Generator tool, can be used to parse and extract from the Master Config file
-(ciabvpn.conf), each Node’s individual WireGuard/VxLAN Config file.
+(`ciabvpn.conf`), each Node’s individual WireGuard/VxLAN Config file.
 Note: Repeat this for each Node or create a script to loop and do it for you
 
 **Example:**
 
-Use vwgen to extract each Node’s FRR config file from the Master config file.
+Use vwgen to extract each Node’s WireGuard config file from the Master config file.
 
     vwgen showconf ciabmesh node1 \> node1.conf
     vwgen showconf ciabmesh node2 \> node2.conf
