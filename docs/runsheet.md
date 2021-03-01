@@ -376,20 +376,17 @@ If there is a problem, often is with a mistake made entering IP addresses in one
 `/etc/frr/frr.conf` file
 
 ## Conclusion
+
+Congratulations.
+
 You now have a fully encrypted, Full-Mesh VPN Overlay Network that should work with
 your Servers and VM’s anywhere they are located whether in-house, inter-divisions, or
 inter-Cloud to interconnect LXD Virtual Machines & LXD Containers.
+
 Now your Applications and Users in any location can easily access Distributed
 Applications and Databases etc anywhere in the Internet with CIAB’s MESH VPN.
-Appendix \#1
-Raw (ie uncommented) /etc/frr/frr.conf script follows
-Note: copy this to create each node’s initial /etc/frr/frr.conf then edit that file
-log syslog informational
-hostname node1
-password \<enter some password\>
-enable password \<enter some "enable" password if you use FRR's VTYSH to do configs\>
-router bgp 64512
-bgp router-id \<insert "this" NODEs VTEP IP address here\>
+
+## Appendix 1
 \# bgp neighbors
 neighbor \<insert Node1’s VTEP IP address here\> remote-as 64512
 neighbor \<insert Node2’s VTEP IP address here\> remote-as 64512
