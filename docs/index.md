@@ -173,7 +173,7 @@ are one method to get rid of the full mesh of iBGP Peers in your network. While 
 
 [VxWireGuard-Generator (`vwgen`)](https://github.com/m13253/VxWireGuard-Generator) has three layers of IP addresses that it adds to every CIAB
 Network Node’s WireGuard config file (re //etc/wireguard/ciabmesh.net):
-The “public ip” address -
+The "public ip" address -
 They are the your Node/Server/Host’s real Public IP Addresses.
 WireGuard uses these addresses to establish VPN Tunnels between Nodes.
 The VxLAN Virtual Tunnel End Point (VTEP) address -
@@ -203,7 +203,7 @@ Indicator (KPI) success factors:
 #### Assumptions
 
 1. Installation is being done on either Ubuntu 18.04 or Ubuntu 20.04 Desktop or Server systems.
-   By “system” we mean a some PC/Laptop/Server, Virtual Machines or a Cloud Instances.
+   By "system" we mean a some PC/Laptop/Server, Virtual Machines or a Cloud Instances.
    Any or all of which can be part of your CIAB Mesh VPN Overlay Network.
 1. Make sure LXD is installed initialized on all Nodes.
 1. Steps 5, 6, 7, 8, 9, 10, 11
@@ -281,7 +281,7 @@ Make sure UNZIP is installed:
 
     sudo apt install unzip -y
 
-Use “wget” to retrieve the VxWireGuard-Generator .ZIP file from github (install wget if its not
+Use "wget" to retrieve the VxWireGuard-Generator .ZIP file from github (install wget if its not
 already).
 
     wget https://github.com/m13253/VxWireGuard-Generator/archive/master.zip
@@ -309,7 +309,7 @@ Install VxWireGuard-Generator misc files
 
 Create a Master config file for our CIAB Mesh VPN using [VxWireGuard-Generator](https://github.com/m13253/VxWireGuard-Generator)
 
-First, create a work directory (let’s call it “ciabvpn”):
+First, create a work directory (let’s call it "ciabvpn"):
 
     mkdir ciabvpn
 
@@ -319,6 +319,7 @@ change into that work directory
 
 NOTE: VxWireGuard-Generator’s main cli tool is `vwgen`.
 To view a `vwgen` help page:
+
 <!-- /* spellchecker: disable */ -->
 
     $ vwgen --help
@@ -337,6 +338,7 @@ To view a `vwgen` help page:
     genkey: Generates a new private key and writes it to stdout
     genpsk: Generates a new preshared key and writes it to stdout
     pubkey: Reads a private key from stdin and writes a public key to stdout
+
 <!-- /* spellchecker: enable */ -->
 
 You may pass `--help` to any of these sub-commands to view usage.
@@ -474,7 +476,7 @@ Edit `/etc/frr/frr.conf` on each Node and where indicated in the template add th
 information.
 
 Remember, you can get each Node’s VTEP (Virtual Tunnel End Point) IP address by executing in the
-directory where you created the original “master” config file:
+directory where you created the original "master" config file:
 
     vwgen show ciabmesh | more
 
@@ -500,6 +502,7 @@ On each Node execute to show that Node’s interfaces information:
 You should see several additional interfaces on each Node now, including:
 
 <!-- /* spellchecker: disable */ -->
+
 - `vciabmesh`: The Node’s VxLAN VTEP Interface and IP
 - `ciabmesh`: The Node’s WireGuard VPN Interface and IP
 <!-- /* spellchecker: enable */ -->
@@ -625,8 +628,8 @@ The `/etc/frr/frr.conf` template with comments:
     # defined above.
     #
     #===================================================================
-    # ID “this” BGP Node by its own VxLAN Tunnel End Point (TEP) IP
-    # address. These will the 172.20.10.x addresses from our IPv4 “Pool” we specified
+    # ID "this" BGP Node by its own VxLAN Tunnel End Point (TEP) IP
+    # address. These will the 172.20.10.x addresses from our IPv4 "Pool" we specified
     # when we used vx-wireguard-generator to create the Master config file and later
     # extracted each Node’s individual WireGuard config.
     #===================================================================
@@ -654,7 +657,7 @@ The `/etc/frr/frr.conf` template with comments:
     # neighbor \<WireGuard Node1’s VTEP IP\> \<AS number\>
     #
     #
-    # Hint: If you were configuring with FRR BGP Multi-AS support you could “conceptually”
+    # Hint: If you were configuring with FRR BGP Multi-AS support you could "conceptually"
     # think of each BGP AS number as a Tenant ID. Again, we are not doing that here.
     # Node0 -
     neighbor \<insert VTEP IP address here\> remote-as 64512
