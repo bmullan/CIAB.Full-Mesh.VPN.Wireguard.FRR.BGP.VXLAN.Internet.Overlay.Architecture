@@ -331,11 +331,12 @@ directory of the `Node1` Server/VM/cloud-instance.
 When you installed FRR in Step 2 it would have created /etc/frr/
 
 ### Step 12
+
 Copy the Free Range Routing (FRR) CIAB BGP and VRF Configuration Template from this
-document’s Appendix \#1 to each node’s /etc/frr/ directory and renaming it “frr.conf” (re
-/etc/frr/frr.conf )
-Step 13
-Edit /etc/frr/frr.conf on each Node and where indicated in the template add the requested IP address
+document’s Appendix 1 to each node’s `/etc/frr/` directory and renaming it `frr.conf` (re
+`/etc/frr/frr.conf` )
+
+### Step 13
 information.
 Remember, you can get each Node’s VTEP (Virtual Tunnel End Point) IP address by executing in the
 directory where you created the original “master” config file:
