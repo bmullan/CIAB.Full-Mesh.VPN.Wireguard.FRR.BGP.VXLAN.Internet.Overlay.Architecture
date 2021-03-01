@@ -349,14 +349,17 @@ directory where you created the original “master” config file:
 Before Proceeding Please Reboot each of your Nodes Now !
 
 ### Step 14
+
 Start up the CIAB Mesh VPN Internetworking Overlay on each/all Nodes
 SSH into each of your Nodes and start both Wireguard and FRR on all Nodes using the appropriate
-CIAB MESH VPN utility bash script from those you copied to each node previously in Step \#4
+CIAB MESH VPN utility bash script from those you copied to each node previously in Step #4
 In each Node execute:
-\$ sudo wg-meshup.sh
-\$ sudo frr-start.sh
-\$ sudo bgp-restart.sh
-Step 15
+
+    $ sudo wg-meshup.sh
+    $ sudo frr-start.sh
+    $ sudo bgp-restart.sh
+
+### Step 15
 On each Node execute to show that Node’s interfaces information:
 \$ ip addr
 You should see several additional interfaces on each Node now, including:
