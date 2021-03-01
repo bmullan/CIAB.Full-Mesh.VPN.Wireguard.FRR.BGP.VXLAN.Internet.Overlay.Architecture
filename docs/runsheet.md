@@ -7,7 +7,18 @@ Multi-Node, Multi-Cloud/Hybrid Systems
 
 includes protocol daemons for BGP, OSPF, RIP etc.
 The Cloud in a Box (CIAB) Mesh VPN is a software-defined wide-area network that is
+abstracted from hardware, creating a virtualized network overlay.
 
+## CIAB Mesh VPN Internet Overlay Architecture
+
+The CIAB Mesh VPN Internet Overlay Architecture is implemented using several open source
+linux networking tools/apps, Routing and protocol capabilities including:
+[Free Range Routing (FRR)](https://frrouting.org/#participate) - FRR is an IP routing protocol suite for Linux and Unix platforms which
+includes protocol daemons for BGP, OSPF, RIP etc.
+
+Virtual eXtensible LAN (VxLAN) – [an overview of VxLAN and Linux by Vincent Bernat](https://vincent.bernat.ch/en/blog/2017-vxlan-linux)
+
+![Figure 1-1 VXLAN network model][fig_1_1]
 
 A VxLAN network is a virtual Layer 2 network constructed on a Layer 3 network to enable
 communication of hosts at Layer 3
