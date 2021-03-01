@@ -222,22 +222,35 @@ address Pools for the configuration of your CIAB Mesh Internetwork.
     $ vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
 
 ### Step 7
+
 Decide now if you want to create an exact number of Node Config files or if you want to generate more
 (many) than you need today.
 Then execute the next step.
-Example: say you only want to create configs for our demo’s 3 nodes
-\$ vwgen add ciabmesh node1 node2 node3
-The above command will inject modifications into our Master “ciabmesh.conf” file with separate
-Sections for each Node (ie “node1”, “node2” etc).
-Config Hint: if you want to create many Node configs using a “root” name part and a
+
+**Example:**
+
+Say you only want to create configs for our demo’s 3 nodes
+
+    $ vwgen add ciabmesh node1 node2 node3
+
+The above command will inject modifications into our Master `ciabmesh.conf` file with separate
+Sections for each Node (ie `node1`, `node2` etc).
+
+Configuration Hint:
+
+If you want to create many Node configs using a `root` name part and a
 sequential Node number here is an example of how to do that:
-Say you want to create a Master config file that has 50 Node configs. The name “root” is to be
-“mycn” and we want 50 of them:
-\$ vwgen add ciabmesh \$(seq -f 'mycn%.f' 50)
+Say you want to create a Master config file that has 50 Node configs. The name `root` is to be
+`mycn` and we want 50 of them:
+
+    $ vwgen add ciabmesh \$(seq -f 'mycn%.f' 50)
+
 This would create a Master config file with 50 Node Configs each named:
-mycn01, mycn02 … mycn49, mycn50, Each with its VxLAN TEP IP, the Node’s
+`mycn01`, `mycn02`, ... `mycn49`, `mycn50`. Each with its VxLAN TEP IP, the Node’s
 public ip and its encryption key to become part of the CIAB Mesh network.
-Background Note
+
+#### Background Note
+
 The Internet Assigned Numbers Authority (IANA) regulates what Port Numbers may be used
 for what purposes on the Internet.
 Port Number Ranges and Well Known Ports
@@ -249,16 +262,14 @@ servers use port 25 (see diagram above).
 Ports 1024-49151- Registered Port range -These can be registered for services with the IANA
 and should be treated as semi-reserved. User written programs should not use these ports.
 
-![](data:image/png;base64,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)
-
 Ports 49152-65535 – These are used by client programs and you are free to use these in client
 programs. When a Web browser connects to a web server the browser will allocate itself a port
 in this range. Also known as ephemeral ports.
 Given the previous Note, you should pick and use an Ephemeral Port Number between 49152-
 65535 for your CIAB Mesh Internetwork configuration use.
 For this document and our examples, I’ll use Port 50000.
-Step 8
-Set public ip of node1, node2 and node3, to each Node’s Public Interface IP address (note: either
+
+### Step 8
 IPv4 or IPv6 will work).
 Example: suppose Node1 is a Cloud Instance and it’s Internet facing \<public ip\> address is
 132.65.71.21 then the command for Node1 would be:
