@@ -108,9 +108,9 @@ our Installation Guide see:
 
 _Video #2 will implement a 3 Node Full-Mesh VPN Internet Overlay using 3 Servers_:
 
-- **1 - a Digital Ocean Cloud server located in the U.S.**
-- **1 - a Hetzner Cloud server located in Germany**
-- **1 - an LXD VM on one of my local servers** _traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up._
+- **Digital Ocean Cloud server located in the U.S.**
+- **Hetzner Cloud server located in Germany**
+- **LXD VM on one of my local servers** _traffic to/from this VM is limited by my local Wifi which is 200Mbps down and 20Mbps up._
 
 At the end of Video #2 you will see Ping tests showing connectivity to/from ANY Node to/from ANY other Node's LXD Containers which are
 on **_private_** `10.x.x.x` networks within each Node.
