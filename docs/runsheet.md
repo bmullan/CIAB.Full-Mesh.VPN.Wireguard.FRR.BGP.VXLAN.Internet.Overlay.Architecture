@@ -1,11 +1,10 @@
 # CIAB Mesh VPN Internetwork Overlay Architecture
 
-Multi-Node, Multi-Cloud/Hybrid Systems
+2019 by Brian Mullan (bmullan.mail@gmail.com)
 
 Using BGP, VxLAN, BGP VRF and LXD to implement LXD VM & Container
 Multi-Node, Multi-Cloud/Hybrid Systems
 
-includes protocol daemons for BGP, OSPF, RIP etc.
 The Cloud in a Box (CIAB) Mesh VPN is a software-defined wide-area network that is
 abstracted from hardware, creating a virtualized network overlay.
 
@@ -119,7 +118,7 @@ Then save the file with the changes made in Step 3.
 
 ### Step 4
 
-Copy (scp) all of the CIAB Mesh VPN Utility Bash scripts to each Node into a directory where you
+Copy (`scp`) all of the CIAB Mesh VPN Utility Bash scripts to each Node into a directory where you
 can execute them and make all of the CIAB Mesh VPN Utility Bash scripts executable.
 
 #### Scripts and their purpose
@@ -135,6 +134,7 @@ can execute them and make all of the CIAB Mesh VPN Utility Bash scripts executab
 - `bgp-stop.sh`: Stop FRR’s BGP on a Node
 - `generate-ipv6-address`: Used by wg-meshup.sh to assign a unique IPv6 address to that node’s Wireguard Interface
 
+[`generate-ipv6-address`](https://github.com/althea-net/generate-ipv6-address) builds IPv6 addresses from a
 given prefix and either a given MAC-48 address (an
 Ethernet hardware address) or a randomly drawn host
 number.
