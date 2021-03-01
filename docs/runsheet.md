@@ -87,9 +87,11 @@ Indicator (KPI) success factors:
    using additional configuration steps contained in a separate document.
 
 ### Step 1
+
 Create an initial Ubuntu 18.04 or Ubuntu 20.04 Node... re a Server/VM or Cloud-Instance which you
 intend to become the Nodes in your Mesh VPN Overlay.
-Step 2
+
+### Step 2
 Install Free Range Routing (FRR) on each of your Nodes:
 \$ sudo apt install frr -y
 Install Wireguard and Wireguard-tools on each of your Nodes:
