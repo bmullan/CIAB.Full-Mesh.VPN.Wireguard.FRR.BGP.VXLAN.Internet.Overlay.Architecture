@@ -138,9 +138,9 @@ can execute them and make all of the CIAB Mesh VPN Utility Bash scripts executab
 given prefix and either a given MAC-48 address (an
 Ethernet hardware address) or a randomly drawn host
 number.
-number.
 
 ### Step 5
+
 Install/configure VxWireguard-Generator.
 VxWireguard-Generator is a tool which will be used to first generate a Master WireGuard Mesh
 Config file.
@@ -148,56 +148,80 @@ After the Master Config file has been built we will use the VxWireguard-Generato
 each individual Node’s Wireguard/VxLAN ciabmesh.conf config file.
 Log into the Node using ssh or however you do it.
 Make sure UNZIP is installed:
-\$ sudo apt install unzip -y
+
+    $ sudo apt install unzip -y
+
 Use “wget” to retrieve the VxWireguard-Generator .ZIP file from github (install wget if its not
 already).
-\$ wget https://github.com/m13253/VxWireguard-Generator/archive/master.zip
+
+    $ wget https://github.com/m13253/VxWireguard-Generator/archive/master.zip
+
 Unzip the VxWireguard-Generator
-\$ unzip ./master.zip
+
+    $ unzip ./master.zip
+
 Change into the unzipped Directory that was created:
-\$ cd ./VxWireguard-Generator-master
+
+    $ cd ./VxWireguard-Generator-master
+
 Install pre-requisites for VxWireguard-Generator.
 Install python3-pip:
-\$ sudo apt install python3-pip -y
-Install VxWirguard-Generator misc files
-\$ sudo pip3 install -r requirements.txt
-\$ python3 setup.py build
-\$ sudo python3 setup.py install --force
-Step 6
-Create a Master config file for our CIAB Mesh VPN using VxWireguard-Generator
-[](https://github.com/m13253/VxWireguard-Generator)
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAACCAIAAAD6uoYjAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAHElEQVQ4y2P48uULwygYBcMe/P//fzQQRsGwBwBSVAXajEX3LQAAAABJRU5ErkJggg==)
-First, create a work directory (let’s call it “ciabvpn”):
-\$ mkdir ciabvpn
-change into that work directory
-\$ cd ./ciabvpn
-NOTE: VxWireguard-Generator’s main cli tool is “vwgen”.
-To view a vwgen’s help page:
-\$ vwgen --help
-Usage vwgen \<sub-commands\> [\<args\>]
-Available sub-commands
-show: Shows the current configuration of the mesh network
-showconf: Generate a configuration file for a given node
-add: Add new nodes to the mesh network
-set: Change the configuration of nodes
-del: Delete nodes from the mesh network
-blacklist: Manage peering blacklist between specified nodes
-zone: Generate BIND-style DNS zone records
-genkey: Generates a new private key and writes it to stdout
-genpsk: Generates a new preshared key and writes it to stdout
-pubkey: Reads a private key from stdin and writes a public key to stdout
-You may pass '--help' to any of these sub-commands to view usage.
-Start to build the Master VxWireguard-Configuration file (we’ll call ours ciabmesh):
-\$ vwgen add ciabmesh
-This will create a file a Master config file called “ciabmesh.conf”
-Set the IPv4 and IPv6 Address Pool for our CIAB Mesh Internet Overlay.
 
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATIAAAKTCAIAAAAVDBNEAAAACXBIWXMAABYlAAAWJQFJUiTwAAAFfklEQVR42u3WsQ3DMBAEQZ2h8PuvVIxPDTgWKHumAuIeCzDXdc3M8aPaHvA2aZtElrBXllaArXxMALIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVkCsgRZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVkCsgRZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAmyBGQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJcgSkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWIEtAloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVmCLAFZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAmyBGQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJcgSkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWIEtAloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVmCLAFZArIEWQKyBFkCsgRZArIEWZoAdnOagL+S5AWPbOtU4BMLyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJcgSkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWIEtAloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVmCLAFZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAmyBGQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJcgSkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWIEtAloAsQZaALEGWgCxBloAsQZYmAFkCsgRZArIEWQKyBFkCsgRkCbIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEpAlyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLQJYgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCwBWYIsAVmCLAFZgiwBWYIsAVkCsgRZArIEWQKyBFkCsgRkCbIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEpAlyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLQJYgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCwBWYIsAVmCLAFZgiwBWYIsAVkCsgRZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVkCsgRZArIEWQKyBFkCsgRZArIEZAmyBGQJsgRkCbIEZAnIEmQJyBJkCcgSZAnIEmQJyBKQJcgSkCXIEpAlyBKQJSBLkCUgS5AlIEuQJSBLkCUgS0CWIEtAliBLQJYgS0CWgCxBloAsQZaALEGWgCxBloAsAVmCLAFZgiwBWYIsAVmCLE0AsgRkCbIEZAmyBGQJsgRkCcgSZAnIEmQJyBJkCcgSZAnIEpAlyBKQJcgSkCXIEpAlIEuQJSBLkCUgS5Al8KRzrTUzhuCrtkZ4XtomMQSy3McNc2ojGow/5dkAAAAASUVORK5CYII=)
+    $ sudo apt install python3-pip -y
+
+Install VxWirguard-Generator misc files
+
+    $ sudo pip3 install -r requirements.txt
+    $ python3 setup.py build
+    $ sudo python3 setup.py install --force
+
+### Step 6
+
+Create a Master config file for our CIAB Mesh VPN using [VxWireguard-Generator](https://github.com/m13253/VxWireguard-Generator)
+
+First, create a work directory (let’s call it “ciabvpn”):
+
+    $ mkdir ciabvpn
+
+change into that work directory
+
+    $ cd ./ciabvpn
+
+NOTE: VxWireguard-Generator’s main cli tool is `vwgen`.
+To view a `vwgen` help page:
+
+    $ vwgen --help
+
+    Usage vwgen \<sub-commands\> [\<args\>]
+
+    Available sub-commands
+
+    show: Shows the current configuration of the mesh network
+    showconf: Generate a configuration file for a given node
+    add: Add new nodes to the mesh network
+    set: Change the configuration of nodes
+    del: Delete nodes from the mesh network
+    blacklist: Manage peering blacklist between specified nodes
+    zone: Generate BIND-style DNS zone records
+    genkey: Generates a new private key and writes it to stdout
+    genpsk: Generates a new preshared key and writes it to stdout
+    pubkey: Reads a private key from stdin and writes a public key to stdout
+
+You may pass `--help` to any of these sub-commands to view usage.
+
+Start to build the Master VxWireguard-Configuration file (we’ll call ours ciabmesh):
+
+    $ vwgen add ciabmesh
+
+This will create a file a Master config file called `ciabmesh.conf`
+Set the IPv4 and IPv6 Address Pool for our CIAB Mesh Internet Overlay.
 
 The following will cause VxWireguard-Generator to utilize IP addresses from these IPv4 and IPv6
 address Pools for the configuration of your CIAB Mesh Internetwork.
-\$ vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
-Step 7
+
+    $ vwgen set ciabmesh pool-ipv4 172.20.10.0/24 pool-ipv6 2001:db8:42::/64
+
+### Step 7
 Decide now if you want to create an exact number of Node Config files or if you want to generate more
 (many) than you need today.
 Then execute the next step.
