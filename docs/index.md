@@ -56,7 +56,12 @@ often providing new applications or enhanced security benefits.\*
 The ideal solution to satisfy the goals of this project will include the following
 **_Key Performance Indicator (KPI)_** success factors:
 
-> **1. Security and Secure communications 2. Open Source 3. Supports use of LXD Containers & VMs and LXD related technologies 4. Easy/simple installation, configuration and expansion 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet 6. Multi-Cloud and Hybrid Cloud capable**
+1. **Security and Secure communications**
+2. **Open Source**
+3. **Supports use of LXD Containers & VMs and LXD related technologies**
+4. **Easy/simple installation, configuration and expansion**
+5. **Multi-node (re Multi LXD Host/Server) capable, intranet or Internet**
+6. **Multi-Cloud and Hybrid Cloud capable**
 
 ---
 
