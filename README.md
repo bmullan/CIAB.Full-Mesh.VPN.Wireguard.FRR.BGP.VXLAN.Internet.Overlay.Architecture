@@ -32,7 +32,7 @@ The ideal solution to satisfy the goals of this project will include the followi
 
 ---
 
-The CIAB Full Mesh VPN Inteernet Overlay Architecture is completly implemented using  
+The CIAB Full Mesh VPN Inteernet Overlay Architecture is completely implemented using  
 Open Source tools and applications:   
  
 - **[Ubuntu Linux](https://ubuntu.com/server/docs)**
