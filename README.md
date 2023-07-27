@@ -1,7 +1,8 @@
 # CIAB Full Mesh VPN Internet Overlay
 
-The ***Cloud In A Box (CIAB)*** project introduces what we describe as the 
-***CIAB Full Mesh VPN Internet Overlay Architecture***.
+The ***Cloud In A Box (CIAB)*** project introduces what we describe as the:  
+
+<h4 align="center"> ***CIAB Full Mesh VPN Internet Overlay Architecture***</h4>.
 
 ***Note:*** There are 2 Youtube Video's referenced further down.  The first is a 8-10 min Intro and the second actually covers the Installation Guide
 step-by-step as I configure all of this on Two different Clouds  and a local VM.   There are only about 14 steps.
