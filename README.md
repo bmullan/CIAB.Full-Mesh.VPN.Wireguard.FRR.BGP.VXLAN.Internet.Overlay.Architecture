@@ -50,7 +50,7 @@ For the **Complete Step-by-Step Installation/Configuration Instruction Guide** s
 - **[The CIAB Mesh VPN Install/Config Internet Overlay Installation Guide](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/CIAB%20Mesh%20VPN%20Install%20%26%20Config%20Guide.pdf)**
 
 To download the **CIAB Mesh VPN Utility Scripts - used to start/stop/restart/etc - Wireguard, FRR, BGP**: 
-> See **STEP 4** in the ***CIAB Mesh VPN Install and Config Guide***
+> See **STEP 4** in the ***[CIAB Mesh VPN Install and Config Guide](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/CIAB%20Mesh%20VPN%20Install%20%26%20Config%20Guide.pdf)***
 
 *Utilizing the CIAB Mesh VPN Internet Overlay you can quickly connect LXD VM's and LXD Containers
 running in your Single/Multi-Tenant, Multi-Node/Server, Multi-Cloud or Hybrid/Cloud Datacenters.*
