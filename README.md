@@ -49,7 +49,12 @@ For the **Complete Step-by-Step Installation/Configuration Instruction Guide** s
 
 - **[The CIAB Mesh VPN Install/Config Internet Overlay Installation Guide](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/CIAB%20Mesh%20VPN%20Install%20%26%20Config%20Guide.pdf)**
 
-To Download the **CIAB Mesh VPN Utility Scripts** see:
+Download the **CIAB Mesh VPN Utility Scripts - used to start/stop/restart etc Wireguard, FRR, BGP** *using the following command in a terminal*:
+
+> $ **wget https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/ciabvpn-scripts.tar.xz**  
+> then  
+> Unzip the *tar.xz* file with the command:  
+> $ **tar -xf ciabvpn-scripts.tar.gz**  
 
 - **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/ciabvpn-scripts.tar.xz)**
 
