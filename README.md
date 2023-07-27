@@ -54,7 +54,7 @@ Download the **CIAB Mesh VPN Utility Scripts - used to start/stop/restart etc Wi
 > $ **wget https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/ciabvpn-scripts.tar.xz**  
 > then  
 > Unzip the *tar.xz* file with the command:  
-> $ **tar -xf ciabvpn-scripts.tar.gz**  
+> $ **tar -xf ciabvpn-scripts.tar.xz**  
 
 - **[CIAB's Mesh VPN Utility Scripts - used to start/stop/restart etc Wiregard, FRR, BGP](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/ciabvpn-scripts.tar.xz)**
 
