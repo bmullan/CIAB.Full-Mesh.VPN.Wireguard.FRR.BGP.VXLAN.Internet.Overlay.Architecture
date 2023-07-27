@@ -47,6 +47,8 @@ Open Source tools and applications:
   
 For the **Complete Step-by-Step Installation/Configuration Instruction Guide** see:
 
+- **[The CIAB Mesh VPN Install/Config Internet Overlay Installation Guide](https://github.com/bmullan/CIAB.Full-Mesh.VPN.Wireguard.FRR.BGP.VXLAN.Internet.Overlay.Architecture/blob/master/CIAB%20Mesh%20VPN%20Install%20%26%20Config%20Guide.pdf)**
+
 - **[The CIAB Mesh VPN Internet Overlay Installation Guide](https://github.com/bmullan/CIAB-Mesh-VPN-Wireguard-FRR-BGP-VXLAN-Internet-Overlay/blob/master/CIAB%20Mesh%20VPN%20Internet%20Overlay%20Installation%20Guide%20%20-%20single-tenant.pdf)**
 
 To Download the **CIAB Mesh VPN Utility Scripts** see:
