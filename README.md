@@ -31,8 +31,9 @@ The ideal solution to satisfy the goals of this project will include the followi
 > 5. Multi-node (re Multi LXD Host/Server) capable, intranet or Internet  
 > 6. Multi-Cloud and Hybrid Cloud capable**  
 
-NOTE:  A recent Fork of LXD called Incus exists and has many of the original LXD Dev Team.
-       There are also many similarities to the CLI syntax of Incus commands (and API to LXD's)
+NOTE:  [A recent Fork of LXD called Incus exists](https://linuxcontainers.org/incus/) and has many of the original LXD Dev Team.
+       There are also many similarities to the CLI syntax of Incus commands (and API to LXD's) so much of the following should
+       also work if using Incus!
 ---
 
 The CIAB Full Mesh VPN Internet Overlay Architecture is completely implemented using  
